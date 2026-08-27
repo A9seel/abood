@@ -8,8 +8,11 @@
     <link href="https://googleapis.com/css2?family=Montserrat:wght@400;500;700;900&display=swap" rel="stylesheet">
     <style>
 
-       
-        @import url('https://googleapis.com');
+        @import url('https://fonts.googleapis.com/css2?family=Pixelify+Sans&display=swap');
+       @font-face{
+           font-family:'scriptMT';
+           src:url('fonts/SCRIPTBL')
+       }
         ::-webkit-scrollbar {
             width: 12px; 
         }
@@ -62,12 +65,6 @@
             z-index:1000;
             top:0;
         }
-        @media (max-width: 600px) {
-            .n {
-                height: auto !important;
-                padding: 10px !important;
-            }
-        }
 
         .dom {
             display: none !important;
@@ -78,7 +75,7 @@
             font-family: 'Script MT';
             margin-right: 12px;
             margin-left: 20px;
-            font-size: 22px;
+            font-size: 18px;
             cursor: pointer;
             transition: 0.5s;
             color: #F2F4F3;
@@ -92,6 +89,7 @@
             -webkit-user-select: none;
             -ms-user-select: none;
             -webkit-user-drag: none;
+            margin-top:4px;
         }
 
             .w:hover {
@@ -242,7 +240,7 @@
             -webkit-user-drag: none;
         }
 
-       @media(max-width:974px) {
+        @media(max-width:974px) {
             body > *:not(.dom) {
                 display: none !important;
             }
