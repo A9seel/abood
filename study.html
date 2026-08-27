@@ -1,0 +1,2994 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>abood-art</title>
+    <link rel="preconnect" href="https://googleapis.com">
+    <link rel="preconnect" href="https://gstatic.com" crossorigin>
+    <link href="https://googleapis.com/css2?family=Montserrat:wght@400;500;700;900&display=swap" rel="stylesheet">
+    <style>
+
+        @import url('https://fonts.googleapis.com/css2?family=Pixelify+Sans&display=swap');
+
+        ::-webkit-scrollbar {
+            width: 12px; 
+        }
+
+        
+        ::-webkit-scrollbar-track {
+            background: black; 
+        }
+
+       
+        ::-webkit-scrollbar-thumb {
+            background: #f0f2f1; 
+            border-radius: 6px;
+            border:3px solid black;
+            width:10px;
+        }
+
+           
+            ::-webkit-scrollbar-thumb:hover {
+                background: #881520; 
+            }
+        html{
+            scroll-behavior:smooth;
+        }
+        * {
+            box-sizing: border-box;
+            margin: 0;
+            padding: 0;
+        }
+
+        body {
+            background-color: #F2F4F3;
+            margin: 0;
+            padding: 0;
+            min-height: 4500px;
+            
+        }
+
+        .n {
+            background-color: black;
+            width: 100%;
+            flex-direction: row-reverse;
+            border-bottom-right-radius: 10px;
+            border-bottom-left-radius: 10px;
+            height: 95px;
+            display: flex;
+            justify-content: space-between;
+            box-shadow: 5px 0px 15px rgba(0,0,0,1);
+            position:sticky;
+            z-index:1000;
+            top:0;
+        }
+
+        .dom {
+            display: none !important;
+        }
+
+        .w, .ww {
+            text-decoration: none;
+            font-family: 'Script MT';
+            margin-right: 12px;
+            margin-left: 20px;
+            font-size: 22px;
+            cursor: pointer;
+            transition: 0.5s;
+            color: #F2F4F3;
+            display: inline-block;
+            padding: 5px 12px;
+            border-radius: 10px;
+            flex-shrink: 0;
+            white-space: nowrap;
+            font-size: clamp(14px,2vm,18px);
+            user-select: none;
+            -webkit-user-select: none;
+            -ms-user-select: none;
+            -webkit-user-drag: none;
+        }
+
+            .w:hover {
+                border-radius: 20px;
+                background-color: #F2F4F3;
+                color: black;
+                box-shadow: 5px 0px 15px #F2F4F3;
+            }
+
+            .ww:hover {
+                border-radius: 20px;
+                background-color: #F2F4F3;
+                color: black;
+                box-shadow: 5px 0px 15px #F2F4F3;
+            }
+
+        .abd {
+            width: 85px;
+            border-radius: 50%;
+            object-fit: cover;
+            height: 85px;
+            object-position: bottom;
+            padding-left: 10px;
+            user-select: none;
+            -webkit-user-select: none;
+            -ms-user-select: none;
+            -webkit-user-drag: none;
+        }
+
+        .img {
+            padding-top: 5px;
+        }
+
+        .words {
+            padding-right: 25px;
+            padding-top: 30px;
+            float: right;
+            padding-left: 10px;
+        }
+
+        .b {
+            padding-left: 30px;
+            user-select: none;
+            -webkit-user-select: none;
+            -ms-user-select: none;
+            -webkit-user-drag: none;
+        }
+
+        .bp {
+            font-size: 70px;
+            font-family: 'Script MT';
+            padding-left: 60px;
+            display: inline-block;
+            margin-bottom: 10px;
+            user-select: none;
+            -webkit-user-select: none;
+            -ms-user-select: none;
+            -webkit-user-drag: none;
+        }
+
+        .p {
+            font-size: 25px;
+            font-family: 'Script MT';
+            padding-left: 60px;
+            display: block;
+            margin-top: 0px;
+            display: grid;
+            grid-template-columns: 500px;
+            margin-bottom: 100px;
+            margin-bottom: 0px;
+        }
+
+        .name {
+            display: inline-block;
+            font-size: 25px;
+            font-family: 'Script MT';
+            margin-top: 27px;
+            float: right;
+            color: #F2F4F3;
+            margin-left: 5px;
+            user-select: none;
+            -webkit-user-select: none;
+            -ms-user-select: none;
+            -webkit-user-drag: none;
+        }
+
+        .ee {
+            width: 250px;
+            position: absolute;
+            height: auto;
+            pointer-events: none;
+            z-index: 10;
+            top: 94px;
+            right: 20px;
+            mix-blend-mode: multiply;
+            user-select: none;
+            -webkit-user-select: none;
+            -ms-user-select: none;
+            -webkit-user-drag: none;
+        }
+
+        .scroll-container {
+            width: 100%;
+            display: flex;
+            overflow-x: auto;
+            white-space: nowrap;
+            padding: 10px;
+            gap: 15px;
+            background-color: black;
+            user-select: none;
+        }
+
+            .scroll-container::-webkit-scrollbar {
+                display: none;
+            }
+
+            .scroll-container:hover {
+                cursor: grab;
+            }
+
+        .item {
+            flex: 0 0 auto;
+            width: 350px;
+            height: 450px;
+            background-color: #F2F4F3;
+            border-width: 2px;
+            border-color: #F2F4F3;
+            border-style: solid;
+            border-radius: 8px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            color: black;
+            font-family: 'Script MT';
+            box-shadow: 5px 0px 15px rgb(128, 128, 128);
+            font-size: 25px;
+            position: relative;
+        }
+
+        .swall {
+            mix-blend-mode: multiply;
+            width: 700px;
+            display: flex;
+            margin: 20px;
+            user-select: none;
+            -webkit-user-select: none;
+            -ms-user-select: none;
+            -webkit-user-drag: none;
+        }
+
+        @media(max-width:974px) {
+            body > *:not(.dom) {
+                display: none !important;
+            }
+
+            .dom {
+                display: flex !important;
+                font-size: 20px;
+                justify-content: center;
+                text-align: center;
+                align-items: center;
+                font-family: 'Script MT';
+                height: 100vh;
+                background-color: black;
+                color: #F2F4F3;
+            }
+
+            .body {
+                height: 1000px;
+            }
+        }
+
+        .ch {
+            margin-right: 60px;
+            width: 100%;
+        }
+
+        #aboutme {
+            background-image: url('imgs/about me.jpg');
+            background-size: cover;
+            background-position: center;
+            background-repeat: no-repeat;
+            border-style: none;
+            box-shadow: none;
+            mix-blend-mode: screen;
+        }
+
+        .me {
+            display: flex;
+            position: absolute;
+            top: 20px;
+            left: 140px;
+        }
+
+        .sonic {
+            mix-blend-mode: multiply;
+            width: 150px;
+            display: flex;
+            position: absolute;
+            bottom: 30px;
+            right: 15px;
+            height: 100px;
+            object-fit: cover;
+            user-select: none;
+            -webkit-user-select: none;
+            -ms-user-select: none;
+            -webkit-user-drag: none;
+        }
+
+        .hearts {
+            mix-blend-mode: multiply;
+            width: 200px;
+            display: flex;
+            position: absolute;
+            top: 0px;
+            right: 80px;
+            user-select: none;
+            -webkit-user-select: none;
+            -ms-user-select: none;
+            -webkit-user-drag: none;
+        }
+
+        .HOBBIES {
+            display: flex;
+            position: absolute;
+            top: 20px;
+            left: 110px;
+        }
+
+        .stars {
+            mix-blend-mode: multiply;
+            width: 150px;
+            display: flex;
+            position: absolute;
+            top: 55px;
+            right: 20px;
+            user-select: none;
+            -webkit-user-select: none;
+            -ms-user-select: none;
+            -webkit-user-drag: none;
+        }
+
+        .yap {
+            display: flex;
+            position: absolute;
+            top: 20px;
+            left: 105px;
+        }
+
+        .major {
+            display: flex;
+            position: absolute;
+            top: 20px;
+            left: 100px;
+        }
+
+        .note {
+            mix-blend-mode: multiply;
+            width: 120px;
+            display: flex;
+            position: absolute;
+            bottom: 3px;
+            left: 110px;
+            height: 100px;
+            object-fit: cover;
+            user-select: none;
+            -webkit-user-select: none;
+            -ms-user-select: none;
+            -webkit-user-drag: none;
+        }
+
+        .guitar {
+            mix-blend-mode: multiply;
+            width: 150px;
+            display: flex;
+            position: absolute;
+            top: 150px;
+            right: 20px;
+            user-select: none;
+            -webkit-user-select: none;
+            -ms-user-select: none;
+            -webkit-user-drag: none;
+        }
+
+        .blood {
+            mix-blend-mode: multiply;
+            width: 250px;
+            display: flex;
+            position: absolute;
+            bottom: 30px;
+            left: 50px;
+            height: 100px;
+            object-fit: cover;
+            user-select: none;
+            -webkit-user-select: none;
+            -ms-user-select: none;
+            -webkit-user-drag: none;
+        }
+
+        .dog {
+            mix-blend-mode: multiply;
+            width: 125px;
+            display: flex;
+            position: absolute;
+            top: 40px;
+            right: 10px;
+            user-select: none;
+            -webkit-user-select: none;
+            -ms-user-select: none;
+            -webkit-user-drag: none;
+        }
+
+        .r {
+            font-size: 70px;
+            font-family: 'Script MT';
+            padding-left: 60px;
+            display: inline-block;
+            margin-bottom: 10px;
+            margin-top: 30px;
+            user-select: none;
+            -webkit-user-select: none;
+            -ms-user-select: none;
+            -webkit-user-drag: none;
+        }
+
+        .nga {
+            font-size: 25px;
+            font-family: 'Script MT';
+            padding-left: 60px;
+            display: block;
+            margin-top: 0px;
+            display: grid;
+            grid-template-columns: 500px;
+            margin-bottom: 100px;
+            margin-bottom: 0px;
+            user-select: none;
+            -webkit-user-select: none;
+            -ms-user-select: none;
+            -webkit-user-drag: none;
+        }
+
+        .juju {
+            mix-blend-mode: multiply;
+            width: 400px;
+            display: flex;
+            height: 100px;
+            object-fit: cover;
+            user-select: none;
+            -webkit-user-select: none;
+            -ms-user-select: none;
+            -webkit-user-drag: none;
+            margin-bottom: 30px;
+            overflow: hidden
+        }
+        .du {
+            mix-blend-mode: multiply;
+           width:100px;
+            user-select: none;
+            -webkit-user-select: none;
+            -ms-user-select: none;
+            -webkit-user-drag: none;
+            margin-bottom: 30px;
+            overflow: hidden;
+            height: 400px;
+            position:absolute;
+            left:0px;
+        }
+        .ju {
+            mix-blend-mode: multiply;
+           
+            width: 200px;
+            display: flex;
+            object-fit: cover;
+            height: 200px;
+            user-select: none;
+            -webkit-user-select: none;
+            -ms-user-select: none;
+            -webkit-user-drag: none;
+            margin-bottom: 30px;
+            overflow: hidden
+        }
+
+        .shark {
+            mix-blend-mode: multiply;
+            width: 400px;
+            display: flex;
+            height: 250px;
+            object-fit: cover;
+            user-select: none;
+            -webkit-user-select: none;
+            -ms-user-select: none;
+            -webkit-user-drag: none;
+            margin-bottom: 30px;
+            overflow: hidden
+        }
+
+        .cat {
+            mix-blend-mode: multiply;
+            width: 800px;
+            user-select: none;
+            -webkit-user-select: none;
+            -ms-user-select: none;
+            -webkit-user-drag: none;
+        }
+
+        .bizza {
+            width: 300px;
+            position: absolute;
+            height: auto;
+            pointer-events: none;
+            z-index: 10;
+            margin-top: -390px;
+            right: 20px;
+            mix-blend-mode: multiply;
+            user-select: none;
+            -webkit-user-select: none;
+            -ms-user-select: none;
+            -webkit-user-drag: none;
+        }
+
+        .itemm {
+            flex: 0 0 auto;
+            width: 200px;
+            height: 150px;
+            background-color: #F2F4F3;
+            border-width: 2px;
+            border-color: #F2F4F3;
+            border-style: solid;
+            border-radius: 8px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            color: black;
+            font-family: 'Script MT';
+            font-size: 25px;
+            position: relative;
+            transition: 0.15s;
+        }
+            .itemm:hover {
+                transform: translateY(-5px);
+                box-shadow: 5px 0px 15px rgb(128, 128, 128);
+            }
+
+        #my socials {
+            background-color: black;
+            user-select: none;
+            background-size: 100%;
+            background-size: contain;
+        }
+
+        .scrol-container::-webkit-scrollbar {
+            display: none;
+        }
+
+        .scrol-container:hover {
+            cursor: grab;
+        }
+
+        .icon {
+            mix-blend-mode: multiply;
+            width: 90px;
+            display: flex;
+            position: absolute;
+            top: 10px;
+            height: 90px;
+            object-fit: cover;
+            user-select: none;
+            -webkit-user-select: none;
+            -ms-user-select: none;
+            -webkit-user-drag: none;
+        }
+
+        #igg {
+            width: 70px;
+            height: 80px;
+        }
+
+        #steam, #tell {
+            width: 70px;
+            height: 70px;
+            top: 20px;
+        }
+
+        #snap {
+            width: 78px;
+            height: 80px;
+        }
+
+        .dkma, .dkmaa {
+            text-decoration: none;
+            font-family: 'pixelify sans';
+            background-color: transparent;
+            font-size: 25px;
+            border-width: 2px;
+            border-radius: 10px;
+            border-style: outset solid;
+            padding: 1px 5px 2px 4px;
+            border-color: black;
+            cursor: pointer;
+            transition: 0.18s;
+            color: black;
+            display: flex;
+            position: absolute;
+            bottom: 10px;
+            user-select: none;
+            -webkit-user-select: none;
+            -ms-user-select: none;
+            -webkit-user-drag: none;
+            box-shadow: 2px 2px 2px 2px rgb(128, 128, 128);
+        }
+
+            .dkma:active {
+                border-style: inset solid;
+            }
+
+            .dkma:hover {
+                box-shadow: 5px 0px 15px rgb(128, 128, 128);
+            }
+
+        .dkmaa {
+            cursor: grab;
+        }
+
+        .disk {
+            width: 300px;
+            position: absolute;
+            height: auto;
+            pointer-events: none;
+            z-index: 10;
+            margin-top: -150px;
+            right: 20px;
+            mix-blend-mode: multiply;
+            user-select: none;
+            -webkit-user-select: none;
+            -ms-user-select: none;
+            -webkit-user-drag: none;
+        }
+
+
+
+        #artists-scroll-container {
+            display: flex;
+            margin-top: 150px;
+            gap: 20px;
+            overflow-x: auto;
+            padding: 20px 10px;
+            scroll-behavior: smooth;
+            /* إخفاء شريط التمرير الافتراضي لبعض المتصفحات */
+            -webkit-overflow-scrolling: touch;
+            background-color: black;
+            font-family: 'Montserrat', 'Helvetica Neue', Helvetica, Arial, sans-serif;
+            scroll-snap-type: x mandatory;
+           
+        }
+
+            /* تحسين شكل شريط التمرير (Scrollbar) */
+            #artists-scroll-container::-webkit-scrollbar {
+                display: none;
+            }
+
+            #artists-scroll-container::-webkit-scrollbar-thumb {
+                background: #ffffff; /* لون سبوتيفاي الأخضر */
+                border-radius: 4px;
+            }
+
+            #artists-scroll-container::-webkit-scrollbar-track {
+                background: #282828;
+            }
+
+            #artists-scroll-container:hover {
+                cursor: grab;
+            }
+        /* الايتم هولدر (البطاقة الرئيسية للمغني) */
+        .artist-item-holder {
+            display: flex;
+            flex-shrink: 0; /* يمنع البطاقة من الانضغاط */
+            background-color: #181818;
+            border-radius: 8px;
+            overflow: hidden;
+            box-shadow: 0 4px 12px rgba(0,0,0,0.5);
+            transition: transform 0.3s;
+        }
+
+            .artist-item-holder:hover {
+                transform: translateY(-5px);
+            }
+
+        /* المستطيل الطولي (صورة المغني وزر سبوتيفاي) */
+        .artist-profile-box {
+            width: 160px;
+            background-color: #242424;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            padding: 15px;
+            box-sizing: border-box;
+            justify-content: space-between;
+        }
+
+        .artist-image {
+            width: 120px;
+            height: 120px;
+            border-radius: 50%; /* صورة دائرية للمغني */
+            object-fit: cover;
+            border: 3px solid #1db954;
+            user-select: none;
+            -webkit-user-select: none;
+            -ms-user-select: none;
+            -webkit-user-drag: none;
+        }
+        #sza,#be {
+            border: 3px solid #073281;
+        }
+
+        .artist-name {
+            font-size: 16px;
+            font-weight: bold;
+            margin: 10px 0;
+            color: white;
+            text-align: center;
+        }
+
+        .spotify-btn {
+            background-color: #1db954;
+            color: white;
+            text-decoration: none;
+            padding: 8px 12px;
+            border-radius: 20px;
+            font-size: 12px;
+            font-weight: bold;
+            transition: background-color 0.2s;
+            text-align: center;
+            width: 100%;
+            box-sizing: border-box;
+            user-select: none;
+            -webkit-user-select: none;
+            -ms-user-select: none;
+            -webkit-user-drag: none;
+        }
+
+            .spotify-btn:hover {
+                background-color: #1ed760;
+            }
+        #szab,#beb {
+            background-color: #073281;
+        }
+
+        /* المستطيل العريض الجبير (أفضل 3 أغاني) */
+        .artist-songs-box {
+            width: 300px;
+            padding: 15px;
+            box-sizing: border-box;
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            border-right: 1px solid #282828; /* خط فاصل لزك بين المستطيلين */
+        }
+
+        .songs-title {
+            font-size: 14px;
+            color: #b3b3b3;
+            margin-bottom: 10px;
+            font-weight: bold;
+        }
+
+        .top-songs-list {
+            list-style: none;
+            padding: 0;
+            margin: 0;
+        }
+
+        .song-item {
+            display: flex;
+            align-items: center;
+            gap: 10px;
+            padding: 8px 0;
+            border-bottom: 1px solid #282828;
+        }
+
+            .song-item:last-child {
+                border-bottom: none;
+            }
+
+        .song-rank {
+            color: #1db954;
+            font-weight: bold;
+            font-size: 14px;
+        }
+        #szar,#ber {
+            color: #073281;
+        }
+
+        .song-name {
+            font-size: 14px;
+            color: #ffffff;
+        }
+        .song-item {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            padding: 8px 0;
+            border-bottom: 1px solid #282828;
+        }
+
+        .song-info {
+            display: flex;
+            gap: 10px;
+            align-items: center;
+        }
+        .play-btn-link {
+            background-color: #1db954;
+            color: white;
+            text-decoration: none; /* يشيل الخط الجوه الرابط */
+            border-radius: 50%;
+            width: 28px;
+            height: 28px;
+            font-size: 11px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            transition: transform 0.2s;
+            user-select: none;
+            -webkit-user-select: none;
+            -ms-user-select: none;
+            -webkit-user-drag: none;
+        }
+
+            .play-btn-link:hover {
+                background-color: #1ed760;
+                transform: scale(1.1);
+            }
+     
+        #szap,#bep {
+            background-color: #073281;
+        }
+        #mj {
+            border: 3px solid #794d3f;
+        }
+        #michelb {
+            background-color: #794d3f;
+        }
+        #michelr {
+            color: #794d3f;
+        }
+        #michelp {
+            background-color: #794d3f;
+        }
+
+        #cp {
+            border: 3px solid #3f07a8
+        }
+        #cpb {
+            background-color: #3f07a8;
+        }
+        #cpr {
+            color: #3f07a8;
+        }
+        #cpp {
+            background-color: #3f07a8;
+        }
+
+
+        #ss,#abba {
+            border: 3px solid #72573d
+        }
+
+        #ssb,#abbab {
+            background-color: #72573d;
+        }
+
+        #ssr,#abbar {
+            color: #72573d;
+        }
+
+        #ssp,#abbap {
+            background-color: #72573d;
+        }
+
+
+
+
+        #l {
+            border: 3px solid #39bffa
+        }
+
+        #lb {
+            background-color: #39bffa;
+        }
+
+        #lr {
+            color: #39bffa;
+        }
+
+        #lp {
+            background-color: #39bffa
+        }
+
+
+
+
+
+        #ad {
+            border: 3px solid #3a3e46
+        }
+
+        #adb {
+            background-color: #3a3e46;
+        }
+
+        #adr {
+            color: #3a3e46;
+        }
+
+        #adp {
+            background-color: #3a3e46
+        }
+
+
+
+
+
+        #lana {
+            border: 3px solid #c4af67
+        }
+
+        #lanab {
+            background-color: #c4af67;
+        }
+
+        #lanar {
+            color: #c4af67;
+        }
+
+        #lanap {
+            background-color: #c4af67
+        }
+
+
+
+        #mari {
+            border: 3px solid #ca0b0b
+        }
+
+        #marib {
+            background-color: #ca0b0b;
+        }
+
+        #marir {
+            color: #ca0b0b;
+        }
+
+        #marip {
+            background-color: #ca0b0b;
+        }
+
+
+        #end {
+            border: 3px solid #ffffff
+
+        }
+
+        #endb {
+            background-color: #ffffff;
+            color:black;
+        }
+
+        #endr {
+            color: #ffffff;
+        }
+
+        #endp {
+            background-color: #ffffff ;
+            color:black;
+        }
+
+
+        #t {
+            border: 3px solid #dc24cd
+        }
+
+        #tb {
+            background-color: #dc24cd;
+            color: black;
+        }
+
+        #tr {
+            color: #dc24cd;
+        }
+
+        #tp {
+            background-color: #dc24cd;
+            color: black;
+        }
+
+
+
+        #movies-scroll-container {
+            display: flex;
+            gap: 20px;
+            overflow-x: auto;
+            padding: 20px 10px;
+            scroll-behavior: smooth;
+            -webkit-overflow-scrolling: touch;
+            background-color: black;
+        }
+
+            #movies-scroll-container::-webkit-scrollbar {
+                display: none;
+            }
+
+        #movies-scroll-container {
+            -ms-overflow-style: none;
+            scrollbar-width: none;
+        }
+
+    
+        .movie-card {
+            display: flex;
+            flex-direction: column; 
+            width: 180px; 
+            min-width: 180px;
+            background-color: #1a1a1a; 
+            border-radius: 12px;
+            overflow: hidden;
+            box-shadow: 0 5px 15px rgba(0,0,0,0.4);
+            transition: transform 0.3s ease, box-shadow 0.3s ease;
+            cursor: grab;
+        }
+
+            
+            .movie-card:hover {
+                transform: scale(1.05);
+                box-shadow: 0 8px 25px #edb500 
+            }
+
+        
+        .movie-poster-box {
+            width: 100%;
+            height: 260px; 
+            overflow: hidden;
+        }
+
+        .movie-poster {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+            user-select: none;
+            -webkit-user-select: none;
+            -ms-user-select: none;
+            -webkit-user-drag: none;
+        }
+
+       
+        .movie-info-box {
+            padding: 12px;
+            display: flex;
+            flex-direction: column;
+            gap: 6px;
+        }
+
+
+        .movie-title {
+            font-size: 14px;
+            font-weight: bold;
+            color: #ffffff;
+            margin: 0;
+            white-space: nowrap;
+            overflow: hidden;
+            text-overflow: ellipsis;
+            user-select: none;
+            -webkit-user-select: none;
+            -ms-user-select: none;
+            -webkit-user-drag: none;
+        }
+
+
+        .movie-rating {
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+            user-select: none;
+            -webkit-user-select: none;
+            -ms-user-select: none;
+            -webkit-user-drag: none;
+        }
+
+        .stars {
+            color: #ffc107;
+            font-size: 13px;
+            letter-spacing: 1px;
+        }
+
+        .rating-number {
+            font-size: 12px;
+            color: #b3b3b3;
+            font-weight: bold;
+            user-select: none;
+            -webkit-user-select: none;
+            -ms-user-select: none;
+            -webkit-user-drag: none;
+        }
+        #it:hover {
+            box-shadow: 0 5px 15px #b3b3b3;
+        }
+        #en:hover {
+            box-shadow: 0 5px 15px #1db954
+        }
+        #black:hover {
+            box-shadow: 0 5px 15px #ffffff;
+        }
+        #hmos:hover {
+            box-shadow: 0 5px 15px #5ca9eb;
+        }
+        #saw:hover {
+            box-shadow: 0 5px 15px #b240a9;
+        }
+        #obb:hover {
+            box-shadow: 0 5px 15px #bd0000;
+        }
+        #project:hover {
+            box-shadow: 0 5px 15px #42949a;
+        }
+        #heretic:hover {
+            box-shadow: 0 5px 15px #8f4f2f;
+        }
+        #mby:hover {
+            box-shadow: 0 5px 15px #cba569;
+        }
+        #deliha:hover {
+            box-shadow: 0 5px 15px #47bfa2;
+        }
+        #ii:hover {
+            box-shadow: 0 5px 15px #54cbdc;
+        }
+        #j{
+            margin-bottom:100px;
+        }
+        #sh{
+            margin-top:-300px;
+           
+        }
+        #e{
+            font-size:50px;
+            margin-left:200px;
+        }
+        #n{
+            margin-top:50px;
+        }
+
+
+
+        #games-scroll-container {
+            display: flex;
+            gap: 20px;
+            overflow-x: auto;
+            padding: 25px 10px;
+            scroll-behavior: smooth;
+            -webkit-overflow-scrolling: touch;
+            scrollbar-width: none; /* إخفاء السكرول لفايرفوكس */
+            background-color:black;
+            margin-top:300px;
+        }
+
+            #games-scroll-container::-webkit-scrollbar {
+                display: none; /* إخفاء السكرول لكروم وسفاري */
+            }
+
+        /* بطاقة اللعبة */
+        .game-card {
+            display: flex;
+            flex-direction: column;
+            width: 200px;
+            min-width: 200px;
+            background-color: #0d0e12; /* أسود مائل للأزرق الغامق جداً */
+            border: 1px solid #1f2330;
+            border-radius: 14px;
+            overflow: hidden;
+            box-shadow: 0 4px 15px rgba(0, 0, 0, 0.6);
+            transition: all 0.3s cubic-bezier(0.25, 0.8, 0.25, 1);
+            cursor: grab;
+        }
+
+            /* تأثير حركة النيون الاحترافي عند تمرير الماوس */
+            .game-card:hover {
+                transform: translateY(-8px);
+                border-color: #00ff66; 
+                box-shadow: 0 10px 30px rgba(0, 255, 102, 0.25);
+            }
+
+        /* البوستر */
+        .game-poster-box {
+            width: 100%;
+            height: 250px;
+            overflow: hidden;
+            user-select: none;
+            -webkit-user-select: none;
+            -ms-user-select: none;
+            -webkit-user-drag: none;
+        }
+
+        .game-poster {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+            transition: transform 0.5s ease;
+            user-select: none;
+            -webkit-user-select: none;
+            -ms-user-select: none;
+            -webkit-user-drag: none;
+        }
+
+        .game-card:hover .game-poster {
+            transform: scale(1.08); /* زووم خفيف للبوستر عند الهوفر */
+        }
+
+        /* معلومات اللعبة */
+        .game-info-box {
+            padding: 14px;
+            display: flex;
+            flex-direction: column;
+            gap: 8px;
+        }
+
+        .game-title {
+            font-size: 16px;
+            font-weight: 800;
+            color: #ffffff;
+            margin: 0;
+            overflow: hidden;
+            text-overflow: ellipsis;
+            white-space: nowrap;
+            user-select: none;
+            -webkit-user-select: none;
+            -ms-user-select: none;
+            -webkit-user-drag: none;
+        }
+
+        /* المنصات (Badges) */
+        .game-platforms {
+            display: flex;
+            gap: 5px;
+            margin-bottom: 2px;
+            user-select: none;
+            -webkit-user-select: none;
+            -ms-user-select: none;
+            -webkit-user-drag: none;
+        }
+
+        .platform-badge {
+            font-size: 10px;
+            font-weight: bold;
+            padding: 2px 6px;
+            border-radius: 4px;
+            background-color: #202433;
+            color: #a0a5b5;
+            user-select: none;
+            -webkit-user-select: none;
+            -ms-user-select: none;
+            -webkit-user-drag: none;
+        }
+            /* ألوان مخصصة لكل منصة لشكل أكثر واقعية */
+            .platform-badge.pc {
+                color: #00ff66;
+                background: rgba(0, 255, 102, 0.1);
+            }
+
+            .platform-badge.ps5 {
+                color: #0066ff;
+                background: rgba(0, 102, 255, 0.1);
+            }
+
+            .platform-badge.xbox {
+                color: #107c10;
+                background: rgba(16, 124, 16, 0.1);
+            }
+
+        /* التقييم */
+        .game-rating {
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+            margin-top: 4px;
+            user-select: none;
+            -webkit-user-select: none;
+            -ms-user-select: none;
+            -webkit-user-drag: none;
+        }
+
+        .game-stars {
+            color: #ffcc00;
+            font-size: 12px;
+            user-select: none;
+            -webkit-user-select: none;
+            -ms-user-select: none;
+            -webkit-user-drag: none;
+        }
+        #detroit:hover {
+            transform: translateY(-8px);
+            border-color: #4fa3e2;
+            box-shadow: 0 10px 30px rgb(60, 153, 222, 0.5);
+        }
+        #re7:hover {
+            transform: translateY(-8px);
+            border-color: #ea7703;
+            box-shadow: 0 10px 30px rgb(243, 154, 69);
+        }
+        #evil2:hover {
+            transform: translateY(-8px);
+            border-color: #710a0f;
+            box-shadow: 0 10px 30px rgb(255, 76, 52, 0.50);
+        }
+        #re4:hover {
+            transform: translateY(-8px);
+            border-color: #706964;
+            box-shadow: 0 10px 30px #d7d4cf;
+        }
+        #devil:hover {
+            transform: translateY(-8px);
+            border-color: #bc8f76;
+            box-shadow: 0 10px 30px rgb(255, 252, 242);
+        }
+        #two:hover {
+            transform: translateY(-8px);
+            border-color: #cc280c;
+            box-shadow: 0 10px 30px rgb(251, 94, 59);
+        }
+        #spit:hover {
+            transform: translateY(-8px);
+            border-color: #b89ed0;
+            box-shadow: 0 10px 30px rgb(255, 220, 250);
+        }
+        #out:hover {
+            transform: translateY(-8px);
+            border-color: #deccbc;
+            box-shadow: 0 10px 30px rgb(253, 213, 78);
+        }
+        #five:hover {
+            transform: translateY(-8px);
+            border-color: #4c9ea4;
+            box-shadow: 0 10px 30px rgb(10, 82, 89);
+        }
+        #cup:hover {
+            transform: translateY(-8px);
+            border-color: #fce174;
+            box-shadow: 0 10px 30px rgb(255, 207, 16);
+        }
+        #under:hover {
+            transform: translateY(-8px);
+            border-color: #fe6060;
+            box-shadow: 0 10px 30px rgb(216, 38, 33);
+        }
+       #snow:hover {
+            transform: translateY(-8px);
+            border-color: #e28cbb;
+            box-shadow: 0 10px 30px rgb(144, 84, 88);
+        }
+        #god:hover {
+            transform: translateY(-8px);
+            border-color: #add8e0;
+            box-shadow: 0 10px 30px rgb(98, 165, 193);
+        }
+        #eleven:hover {
+            transform: translateY(-8px);
+            border-color: #ffef59;
+            box-shadow: 0 10px 30px rgb(227, 149, 27);
+        }
+        #rise:hover {
+            transform: translateY(-8px);
+            border-color: #deeff5;
+            box-shadow: 0 10px 30px rgb(84, 122, 143);
+        }
+        #ig:hover {
+            box-shadow: 0 10px 30px rgb(160, 84, 216);
+            border: 2px solid #5c30cf;
+        }
+        #tikk:hover {
+            box-shadow: 0 10px 30px rgb(214, 55, 31);
+            border: 2px solid #b51700;
+        }
+        #spotyy:hover {
+            box-shadow: 0 10px 30px rgb(128, 191, 136);
+            border: 2px solid #3ba55d;
+        }
+        #diss:hover {
+            box-shadow: 0 10px 30px rgb(131, 133, 235);
+            border: 2px solid #5e5fb7;
+        }
+        #steamm:hover {
+            box-shadow: 0 10px 30px rgb(40, 105, 221);
+            border: 2px solid #000e29ff;
+        }
+        #snapp:hover {
+            box-shadow: 0 10px 30px rgb(250, 247, 90);
+            border: 2px solid #f0ed00;
+        }
+        #telll:hover {
+            box-shadow: 0 10px 30px rgb(126, 202, 237);
+            border: 2px solid #3ca6d5;
+        }
+        #whatt:hover {
+            box-shadow: 0 10px 30px rgb(141, 248, 147);
+            border: 2px solid #50bd59;
+        }
+        #szaa:hover {
+            box-shadow: 0 10px 30px rgb(112, 142, 168);
+            border: 2px solid #073281;
+        }
+        #mjj:hover {
+            box-shadow: 0 10px 30px rgb(150, 101, 85);
+            border: 2px solid #794d3f;
+        }
+        #cppp:hover {
+            box-shadow: 0 10px 30px rgb(120, 64, 225);
+            border: 2px solid #3f07a8ff;
+        }
+        #sss:hover {
+            box-shadow: 0 10px 30px rgb(220, 162, 105);
+            border: 2px solid #72573d;
+        }
+        #bee:hover {
+            box-shadow: 0 10px 30px rgb(69, 126, 229);
+            border: 2px solid #073281;
+        }
+        #ll:hover {
+            box-shadow: 0 10px 30px rgb(130, 211, 247);
+            border: 2px solid #39bffa;
+        }
+        #add:hover {
+            box-shadow: 0 10px 30px rgb(101, 101, 101);
+            border: 2px solid #3a3e46;
+        }
+        #marii:hover {
+            box-shadow: 0 10px 30px rgb(248, 107, 107);
+            border: 2px solid #ca0b0b;
+        }
+        #lanaa:hover {
+            box-shadow: 0 10px 30px rgb(230, 216, 169);
+            border: 2px solid #c4af67;
+        }
+        #endd:hover {
+            box-shadow: 0 10px 30px rgb(204, 204, 204);
+            border: 2px solid #ffffff;
+        }
+        #abbaa:hover {
+            box-shadow: 0 10px 30px rgb(208, 180, 152);
+            border: 2px solid #72573d;
+        }
+        #tt:hover {
+            box-shadow: 0 10px 20px rgb(246, 129, 236);
+            border: 2px solid #dc24cd;
+        }
+        #bad:hover {
+            box-shadow: 0 10px 30px rgb(111, 221, 150);
+            border: 2px solid #1db954ff;
+        }
+    </style>
+
+
+
+
+</head>
+
+<body>
+
+    <div class="dom">
+        sorry... you can only see this on your computer>_<
+    </div>
+
+
+    <div class="n">
+        <div class="words">
+
+            <a class=" w" href="#about me">
+                about me
+            </a>
+            <a class=" w" href="#my socials">
+                my socials
+            </a>
+            <a class=" w" href="#artists-scroll-container">
+                bangers
+            </a>
+            <a class=" ww" href="#movies-scroll-container">
+                absolute cinema
+            </a>
+            <a class="w" href="#games-scroll-container">
+                games
+            </a>
+
+        </div>
+        <div class="img">
+            <img class="abd" src="imgs/abd.jpg" />
+            <p class="name">
+                @abdheroo
+            </p>
+        </div>
+
+    </div>
+
+
+    <div class="b">
+        <p class="bp">
+            hello...
+
+        </p>
+        <p class="p">
+            you will find anything you need or want to know about me in this page. my favorite songs,movies,shows,series and more...
+        </p>
+        <img class="ee" src="imgs/spider.jpg" />
+
+    </div>
+    <div class="wall">
+        <img class="swall" src="imgs/wall spider.jpg" />
+
+    </div>
+
+    <div class="scroll-container"  id="about me">
+
+        <div class="item" id="aboutme">
+        </div>
+        <div class="item" id="me">
+            <p class="me">
+                ME
+            </p>
+            <p>
+                name: abdulrahman mohamed<br />
+                age:  18<br />
+                from: iraq<br />
+                tall: 183cm<br />
+                birthday:26/12/2007<br />
+                addicted to music too..
+            </p>
+            <img class="sonic" src="imgs/sonic.jpg" />
+            <img class="hearts" src="imgs/hearts.jpg" />
+        </div>
+        <div class="item" id=" hobbies">
+            <p class="HOBBIES">HOBBIES</p>
+            <p>
+                I am an<br />
+                artist<br />
+                writer<br />
+                devloper<br />
+                cook<br />
+                and anything art related..
+
+
+            </p>
+            <img class="sonic" src="imgs/iloveu.jpg" />
+            <img class="stars" src="imgs/stars.jpg" />
+        </div>
+
+        <div class="item">
+            <p class="yap">  YAPPING</p>
+            <p>
+                I lived in turkey for 7 years.<br />
+                I speak:<br />
+                arabic<br />
+                turkish<br />
+                english<br />
+                ASL<br />
+                and one day..<br /> i'm leaving this place.
+            </p>
+            <img class="note" src="imgs/note.jpg" />
+            <img class="guitar" src="imgs/guitar.jpg" />
+        </div>
+        <div class="item">
+            <p class="major">MY MAJOR</p>
+            <p>
+                i graduated highschool with a <br />93 gpa.<br />
+                now..<br />
+                i'm a student at al-nahrain uni<br />
+                studing network eng.
+            </p>
+            <img class="blood" src="imgs/blood.jpg" />
+            <img class="dog" src="imgs/dog.jpg" />
+        </div>
+    </div>
+    <div class="sinto" id="my" social>
+        <div class="ptwo">
+            <p class="r">
+                I CAN'T ...
+            </p>
+            <p class="nga">
+                i can't imagine that.. we are not kids anymore,
+                every each one of us will have his own life,story and job.<br />
+                anyways.. don't ever forget that i will always wish you well....<br />
+                and rememmber that i am one call away!<br />
+                you don't have my accounts?!<br />
+                i got u bro...
+            </p>
+            <img class="juju" src="imgs/juju.jpg" />
+            <img class="bizza" src="imgs/poster.jpg" />
+        </div>
+
+        <div class="scroll-container" id="my socials">
+
+
+            <div class="itemm" id="ig">
+                <img class="icon" id="igg" src="imgs/ig.jpg" />
+                <a class="dkma" href="https://www.instagram.com/abdheroo/" target="_blank">
+                    abdheroo
+                </a>
+            </div>
+            <div class="itemm" id="ig">
+                <img class="icon" id="igg" src="imgs/ig.jpg" />
+                <a class="dkma" href="https://www.instagram.com/abdindetail/" target="_blank">
+                    abdindetail
+                </a>
+            </div>
+            <div class="itemm" id="tikk">
+                <img class="icon" id=" tik" src="imgs/tik.jpg" />
+                <a class="dkma" href="https://www.tiktok.com/@abdtx.wq2?lang=ar" target="_blank">
+                    abdtx.wq2
+                </a>
+            </div>
+
+            <div class="itemm" id="spotyy">
+                <img class="icon" id="spoty" src="imgs/spoty.jpg" />
+                <a class="dkma" href="https://open.spotify.com/user/d3xwztsk0kr590nbd6nt8664g?si=890e3ff456f64edb" target="_blank">
+                    abood
+                </a>
+
+            </div>
+            <div class="itemm"id="diss">
+                <img class="icon" id="dis" src="imgs/dis.jpg" />
+                <p class="dkmaa">
+                    thekiller9661
+                </p>
+            </div>
+            <div class="itemm" id="steamm">
+                <img class="icon" id="steam" src="imgs/steam.jpg" />
+                <a class="dkma" href="https://store.steampowered.com/account/" target="_blank">
+                    goob3211
+                </a>
+            </div>
+            <div class="itemm"id="snapp">
+                <img class="icon" id="snap" src="imgs/snap.jpg" />
+                <a class="dkma" href="https://www.snapchat.com/add/iabod5h?share_id=3HEmwmEx7To&locale=ar-EG" target="_blank">
+                    iabod5h
+                </a>
+            </div>
+            <div class="itemm"id="telll">
+                <img class="icon" id="tell" src="imgs/tell.jpg" />
+                <a class="dkma" href="https://t.me/Abdtw_91" target="_blank">
+                    Abdtw_91
+                </a>
+            </div>
+            <div class="itemm"id="whatt">
+                <img class="icon" id="what" src="imgs/what.jpg" />
+                <p class="dkmaa">
+                    aboodwt2
+                </p>
+            </div>
+
+
+
+        </div>
+        <div class="binto">
+            <div class="pthree">
+                <p class="r">
+                    I AM A MUSIC ADICT....
+                </p>
+                <p class="nga">
+                    I am the biggest music adict in the whole word..<br />
+                    am i woried about it?<br />
+                    HELL  NO!<br />
+                    so here is a list of my top artists and bands and my top 3 songs by them.
+                </p>
+                <img class="disk" src="imgs/drump.jpg" />
+
+            </div>
+        </div>
+        <div class="scroll-container" id="artists-scroll-container">
+
+
+            <div id="szaa"class="artist-item-holder">
+
+                <div class="artist-profile-box">
+                    <img src="imgs/sza.jpg" alt="صورة المغني" id="sza" class="artist-image">
+                    <div class="artist-name">sza</div>
+                    <a href="https://open.spotify.com/artist/7tYKF4w9nC0nq9CsPZTHyP?si=g9HyTMnsQuiZkB2dYe7qXg" target="_blank" id="szab" class="spotify-btn">spotify</a>
+                </div>
+
+
+                <div class="artist-songs-box">
+                    <div class="songs-title">top 3 </div>
+                    <ul class="top-songs-list">
+                        <li class="song-item">
+                            <span id="szar" class="song-rank">1</span>
+                            <span class="song-name">snooze</span>
+                            <a href="https://open.spotify.com/track/7aQi48ImHQsfni7tDlFQvL?si=acd156b5df0046c4" id="szap" target="_blank" class="play-btn-link">try</a>
+                        </li>
+
+                        <li class="song-item">
+                            <span id="szar" class="song-rank">2</span>
+                            <span class="song-name">open arms</span>
+                            <a href="https://open.spotify.com/track/6koKhrBBcExADvWuOgceNZ?si=c22dff8ecc284ac8" id="szap" target="_blank" class="play-btn-link">try</a>
+                        </li>
+
+                        <li class="song-item">
+                            <span id="szar" class="song-rank">3</span>
+                            <span class="song-name">BMF</span>
+                            <a href="https://open.spotify.com/track/3U3hFkMr0Q90pD24EkE3Pr?si=9b78d3c6fc544a39" id="szap" target="_blank" class="play-btn-link">try</a>
+                        </li>
+
+                    </ul>
+                </div>
+            </div>
+
+
+            <div id="mjj"class="artist-item-holder">
+
+                <div class="artist-profile-box">
+                    <img id="mj" src="imgs/mj.jpg" alt="صورة المغني" class="artist-image">
+                    <div class="artist-name">michael j.</div>
+                    <a id="michelb" href="https://open.spotify.com/artist/3fMbdgg4jU18AjLCKBhRSm?si=6LqgWr3BRMaBjuUbOqV0yQ" target="_blank" class="spotify-btn">spotify</a>
+                </div>
+
+
+                <div class="artist-songs-box">
+                    <div class="songs-title">top 3 </div>
+                    <ul class="top-songs-list">
+                        <li class="song-item">
+                            <span id="michelr" class="song-rank">1</span>
+                            <span class="song-name">human nuture</span>
+                            <a href="https://open.spotify.com/track/4cgjA7B4fJBHyB9Ya2bu0t?si=a919b33952464a37" id="michelp" target="_blank" class="play-btn-link">try</a>
+
+                        </li>
+
+                        <li class="song-item">
+                            <span id="michelr" class="song-rank">2</span>
+                            <span class="song-name">dirty diana</span>
+                            <a href="https://open.spotify.com/track/0AcgKF7kbSoCkh3n7vlHwK?si=0354906e829046be" id="michelp" target="_blank" class="play-btn-link">try</a>
+                        </li>
+
+                        <li class="song-item">
+                            <span id="michelr" class="song-rank">3</span>
+                            <span class="song-name">rock my world</span>
+                            <a href="https://open.spotify.com/track/4oY2T9ur7Ll5b2kpBlcWcb?si=75b0ceabaf6d4fb8" id="michelp" target="_blank" class="play-btn-link">try</a>
+                        </li>
+
+                    </ul>
+                </div>
+            </div>
+
+
+
+            <div id="cppp"class="artist-item-holder">
+
+                <div class="artist-profile-box">
+                    <img   id="cp"src="imgs/cp.jpg" alt="صورة المغني" class="artist-image">
+                    <div class="artist-name">coldplay</div>
+                    <a href="https://open.spotify.com/artist/4gzpq5DPGxSnKTe4SA8HAU?si=NhyhiSL9SCSWJeXFa7j8cg" id="cpb" target="_blank" class="spotify-btn">spotify</a>
+                </div>
+
+
+                <div class="artist-songs-box">
+                    <div class="songs-title">top 3 </div>
+                    <ul class="top-songs-list">
+                        <li class="song-item">
+                            <span id="cpr" class="song-rank">1</span>
+                            <span class="song-name">adventure of a lifetime</span>
+                            <a href="https://open.spotify.com/track/69uxyAqqPIsUyTO8txoP2M?si=503811fb4af64cff" id="cpp" target="_blank" class="play-btn-link">try</a>
+                        </li>
+                        <li class="song-item">
+                            <span id="cpr" class="song-rank">2</span>
+                            <span class="song-name">yellow</span>
+                            <a href="https://open.spotify.com/track/3AJwUDP919kvQ9QcozQPxg?si=9fbec4d4e59e4e9c" id="cpp" target="_blank" class="play-btn-link">try</a>
+
+                        </li>
+                        <li class="song-item">
+                            <span id="cpr" class="song-rank">3</span>
+                            <span class="song-name">sparks</span>
+                            <a href="https://open.spotify.com/track/7D0RhFcb3CrfPuTJ0obrod?si=edcd30d098dc45b9" id="cpp" target="_blank" class="play-btn-link">try</a>
+
+                        </li>
+                    </ul>
+                </div>
+            </div>
+
+            <div id="sss"class="artist-item-holder">
+
+                <div class="artist-profile-box">
+                    <img id="ss" src="imgs/ss.jpg" alt="صورة المغني" class="artist-image">
+                    <div class="artist-name">Sieena spiro</div>
+                    <a href="https://open.spotify.com/user/31exzg3loxgyxbct6iiulj2xejvq?si=6d40b20cb2c044bc" id="ssb" target="_blank" class="spotify-btn">spotify</a>
+                </div>
+
+
+                <div class="artist-songs-box">
+                    <div class="songs-title">top 3 </div>
+                    <ul class="top-songs-list">
+                        <li class="song-item">
+                            <span id="ssr" class="song-rank">1</span>
+                            <span class="song-name"> he's not my baby, i'm his</span>
+                            <a href="https://open.spotify.com/track/1q1ldk5uKxdlnD6GTPX8Xc?si=ffacfc5bfef84baa" id="ssp" target="_blank" class="play-btn-link">try</a>
+                        </li>
+                        <li class="song-item">
+                            <span id="ssr" class="song-rank">2</span>
+                            <span class="song-name">material lover</span>
+                            <a href="https://open.spotify.com/track/2aQcGu5C6qFcicPsaywTEK" id="ssp" target="_blank" class="play-btn-link">try</a>
+                        </li>
+                        <li class="song-item">
+                            <span id="ssr" class="song-rank">3</span>
+                            <span class="song-name">MAYBE</span>
+                            <a href="https://open.spotify.com/track/6pryy6qiJAw4EcjZP2CRI2" id="ssp" target="_blank" class="play-btn-link">try</a>
+                        </li>
+                    </ul>
+                </div>
+
+            </div>
+
+            <div id="bee"class="artist-item-holder">
+
+                <div class="artist-profile-box">
+                    <img id="be" src="imgs/be.jpg" alt="صورة المغني" class="artist-image">
+                    <div class="artist-name">billie eilish</div>
+                    <a id="beb" href="https://open.spotify.com/artist/6qqNVTkY8uBg9cP3Jd7DAH?si=CpY2ILRrR8mXPUxEJmnJwg" target="_blank" class="spotify-btn">spotify</a>
+                </div>
+
+
+                <div class="artist-songs-box">
+                    <div class="songs-title">top 3 </div>
+                    <ul class="top-songs-list">
+                        <li class="song-item">
+                            <span id="ber" class="song-rank">1</span>
+                            <span class="song-name">L'AMOUR DE MA VIE</span>
+                            <a href="https://open.spotify.com/track/6fPan2saHdFaIHuTSatORv" id="bep" target="_blank" class="play-btn-link">try</a>
+                        </li>
+                        <li class="song-item">
+                            <span id="ber" class="song-rank">2</span>
+                            <span class="song-name">birds of a feather</span>
+                            <a href="https://open.spotify.com/track/6dOtVTDdiauQNBQEDOtlAB" id="bep" target="_blank" class="play-btn-link">try</a>
+                        </li>
+                        <li class="song-item">
+                            <span id="ber" class="song-rank">3</span>
+                            <span class="song-name">happier than ever</span>
+                            <a href="https://open.spotify.com/track/4RVwu0g32PAqgUiJoXsdF8" id="bep" target="_blank" class="play-btn-link">try</a>
+                        </li>
+                    </ul>
+                </div>
+
+            </div>
+
+
+
+            <div id="ll"class="artist-item-holder">
+
+                <div class="artist-profile-box">
+                    <img src="imgs/l.jpg" id="l" alt="صورة المغني" class="artist-image">
+                    <div class="artist-name">laufey</div>
+                    <a id="lb" href="https://open.spotify.com/artist/7gW0r5CkdEUMm42w9XpyZO?si=L8rFdg_CQeCKKu_OkGHwXw" target="_blank" class="spotify-btn">spotify</a>
+                </div>
+
+
+                <div class="artist-songs-box">
+                    <div class="songs-title">top 3 </div>
+                    <ul class="top-songs-list">
+                        <li class="song-item">
+                            <span id="lr" class="song-rank">1</span>
+                            <span class="song-name">beautiful stranger</span>
+                            <a href="https://open.spotify.com/track/38TpUKiHQZyBKiD9LMMy6X" id="lp" target="_blank" class="play-btn-link">try</a>
+                        </li>
+                        <li class="song-item">
+                            <span id="lr" class="song-rank">2</span>
+                            <span class="song-name">goddess</span>
+                            <a href="https://open.spotify.com/track/2SEeyc2KS9DIjiJPCYtfgJ" id="lp" target="_blank" class="play-btn-link">try</a>
+                        </li>
+                        <li class="song-item">
+                            <span id="lr" class="song-rank">3</span>
+                            <span class="song-name">too little, too late</span>
+                            <a href="https://open.spotify.com/track/0NLoUqN0vfNm6NqTc2qrGo" id="lp" target="_blank" class="play-btn-link">try</a>
+                        </li>
+                    </ul>
+                </div>
+
+            </div>
+
+
+
+            <div  id="add"class="artist-item-holder">
+
+                <div class="artist-profile-box">
+                    <img id="ad" src="imgs/adele.jpg" alt="صورة المغني" class="artist-image">
+                    <div class="artist-name">adele</div>
+                    <a id="adb" href="https://open.spotify.com/artist/4dpARuHxo51G3z768sgnrY?si=LFwISxXHQrWtXa9HybvY-g" target="_blank" class="spotify-btn">spotify</a>
+                </div>
+
+
+                <div class="artist-songs-box">
+                    <div class="songs-title">top 3 </div>
+                    <ul class="top-songs-list">
+                        <li class="song-item">
+                            <span id="adr" class="song-rank">1</span>
+                            <span class="song-name">when we were younger</span>
+                            <a href="https://open.spotify.com/track/6O5TrlFWTYvznd9fMC0VvU" id="adp" target="_blank" class="play-btn-link">try</a>
+                        </li>
+                        <li class="song-item">
+                            <span id="adr" class="song-rank">2</span>
+                            <span class="song-name">i drink wine</span>
+                            <a href="https://open.spotify.com/track/6v0UJD4a2FtleHeSYVX02A?si=7f8e17fea06441f7" id="adp" target="_blank" class="play-btn-link">try</a>
+                        </li>
+                        <li class="song-item">
+                            <span id="adr" class="song-rank">3</span>
+                            <span class="song-name">someone like you</span>
+                            <a href="https://open.spotify.com/track/3bNv3VuUOKgrf5hu3YcuRo" id="adp" target="_blank" class="play-btn-link">try</a>
+                        </li>
+                    </ul>
+                </div>
+
+            </div>
+
+
+
+            <div id="marii"class="artist-item-holder">
+
+                <div class="artist-profile-box">
+                    <img id="mari" src="imgs/mari.jpg" alt="صورة المغني" class="artist-image">
+                    <div class="artist-name">the marias</div>
+                    <a id="marib" href="https://open.spotify.com/artist/2sSGPbdZJkaSE2AbcGOACx?si=qdYI0vCYQAyaOl_XCPHCHQ" target="_blank" class="spotify-btn">spotify</a>
+                </div>
+
+
+                <div class="artist-songs-box">
+                    <div class="songs-title">top 3 </div>
+                    <ul class="top-songs-list">
+                        <li class="song-item">
+                            <span id="marir" class="song-rank">1</span>
+                            <span class="song-name">little by little</span>
+                            <a href="https://open.spotify.com/track/3EzlgdxyFvjeAGzR5WxHB8" id="marip" target="_blank" class="play-btn-link">try</a>
+                        </li>
+                        <li class="song-item">
+                            <span id="marir" class="song-rank">2</span>
+                            <span class="song-name">un millon</span>
+                            <a href="https://open.spotify.com/track/5dFG12OQz10CbUFZIYH0gv" id="marip" target="_blank" class="play-btn-link">try</a>
+                        </li>
+                        <li class="song-item">
+                            <span id="marir" class="song-rank">3</span>
+                            <span class="song-name">sienna</span>
+                            <a href="https://open.spotify.com/track/0InIeZW4P6VO7dUGRM4AKH" id="marip" target="_blank" class="play-btn-link">try</a>
+                        </li>
+                    </ul>
+                </div>
+
+            </div>
+
+
+
+            <div id="lanaa"class="artist-item-holder">
+
+                <div class="artist-profile-box">
+                    <img id="lana" src="imgs/lana.jpg" alt="صورة المغني" class="artist-image">
+                    <div class="artist-name">lana del rey</div>
+                    <a id="lanab" href="https://open.spotify.com/artist/00FQb4jTyendYWaN8pK0wa?si=n90oVXfoQBOfOQanyDhGaQ" target="_blank" class="spotify-btn">spotify</a>
+                </div>
+
+
+                <div class="artist-songs-box">
+                    <div class="songs-title">top 3 </div>
+                    <ul class="top-songs-list">
+                        <li class="song-item">
+                            <span id="lanar" class="song-rank">1</span>
+                            <span class="song-name">cinnamon girl</span>
+                            <a href="https://open.spotify.com/track/2mdEsXPu8ZmkHRRtAdC09e" id="lanap" target="_blank" class="play-btn-link">try</a>
+                        </li>
+                        <li class="song-item">
+                            <span id="lanar" class="song-rank">2</span>
+                            <span class="song-name">the othe woman</span>
+                            <a href="https://open.spotify.com/track/1KuVEZR4xuQVNr1KkanAV4" id="lanap" target="_blank" class="play-btn-link">try</a>
+                        </li>
+                        <li class="song-item">
+                            <span id="lanar" class="song-rank">3</span>
+                            <span class="song-name">chemtrails over the country club</span>
+                            <a href="https://open.spotify.com/track/7bPWdJgx8vek7S5i5yAtvG" id="lanap" target="_blank" class="play-btn-link">try</a>
+                        </li>
+                    </ul>
+                </div>
+
+            </div>
+
+
+            <div id="endd"class="artist-item-holder">
+
+                <div class="artist-profile-box">
+                    <img id="end" src="imgs/end.jpg" alt="صورة المغني" class="artist-image">
+                    <div class="artist-name">the weekend</div>
+                    <a id="endb" href="https://open.spotify.com/artist/1Xyo4u8uXC1ZmMpatF05PJ?si=JuyzdPCHRq64tqdyN_iq9A" target="_blank" class="spotify-btn">spotify</a>
+                </div>
+
+
+                <div class="artist-songs-box">
+                    <div class="songs-title">top 3 </div>
+                    <ul class="top-songs-list">
+                        <li class="song-item">
+                            <span id="endr" class="song-rank">1</span>
+                            <span class="song-name">after hours</span>
+                            <a href="https://open.spotify.com/track/2p8IUWQDrpjuFltbdgLOag" id="endp" target="_blank" class="play-btn-link">try</a>
+                        </li>
+                        <li class="song-item">
+                            <span id="endr" class="song-rank">2</span>
+                            <span class="song-name">is there someone else</span>
+                            <a href="https://open.spotify.com/track/37zcCimcUGurQoLEAuN8nR" id="endp" target="_blank" class="play-btn-link">try</a>
+                        </li>
+                        <li class="song-item">
+                            <span id="endr" class="song-rank">3</span>
+                            <span class="song-name">call out my name</span>
+                            <a href="https://open.spotify.com/track/09mEdoA6zrmBPgTEN5qXmN" id="endp" target="_blank" class="play-btn-link">try</a>
+                        </li>
+                    </ul>
+                </div>
+
+            </div>
+
+
+            <div id="abbaa"class="artist-item-holder">
+
+                <div class="artist-profile-box">
+                    <img id="abba" src="imgs/abba.jpg" alt="صورة المغني" class="artist-image">
+                    <div class="artist-name">ABBA</div>
+                    <a id="abbab" href="https://open.spotify.com/artist/0LcJLqbBmaGUft1e9Mm8HV?si=d_jMJCIPTRyWt7XbNg_Etg" target="_blank" class="spotify-btn">spotify</a>
+                </div>
+
+
+                <div class="artist-songs-box">
+                    <div class="songs-title">top 3 </div>
+                    <ul class="top-songs-list">
+                        <li class="song-item">
+                            <span id="abbar" class="song-rank">1</span>
+                            <span class="song-name">slipping through my fingers</span>
+                            <a href="https://open.spotify.com/track/6TvxPS4fj4LUdjw2es4g21" id="abbap" target="_blank" class="play-btn-link">try</a>
+                        </li>
+                        <li class="song-item">
+                            <span id="abbar" class="song-rank">2</span>
+                            <span class="song-name">angeleyes</span>
+                            <a href="https://open.spotify.com/track/7rWgGyRK7RAqAAXy4bLft9" id="abbap" target="_blank" class="play-btn-link">try</a>
+                        </li>
+                        <li class="song-item">
+                            <span id="abbar" class="song-rank">3</span>
+                            <span class="song-name">super trouper</span>
+                            <a href="https://open.spotify.com/track/0J2p4KYdr6Mg4ET6JPlbe1" id="abbap" target="_blank" class="play-btn-link">try</a>
+                        </li>
+                    </ul>
+                </div>
+
+            </div>
+
+
+            <div id="tt"class="artist-item-holder">
+
+                <div class="artist-profile-box">
+                    <img id="t" src="imgs/t.jpg" alt="صورة المغني" class="artist-image">
+                    <div class="artist-name">taylor swift</div>
+                    <a id="tb" href="https://open.spotify.com/artist/06HL4z0CvFAxyc27GXpf02?si=HcJf6yH3S4SrJGGr6ZpGdA" target="_blank" class="spotify-btn">spotify</a>
+                </div>
+
+
+                <div class="artist-songs-box">
+                    <div class="songs-title">top 3 </div>
+                    <ul class="top-songs-list">
+                        <li class="song-item">
+                            <span id="tr" class="song-rank">1</span>
+                            <span class="song-name">all too well</span>
+                            <a href="https://open.spotify.com/track/5enxwA8aAbwZbf5qCHORXi" id="tp" target="_blank" class="play-btn-link">try</a>
+                        </li>
+                        <li class="song-item">
+                            <span id="tr" class="song-rank">2</span>
+                            <span class="song-name">enchanted</span>
+                            <a href="https://open.spotify.com/track/3sW3oSbzsfecv9XoUdGs7h" id="tp" target="_blank" class="play-btn-link">try</a>
+                        </li>
+                        <li class="song-item">
+                            <span id="tr" class="song-rank">3</span>
+                            <span class="song-name">daylight</span>
+                            <a href="https://open.spotify.com/track/1fzAuUVbzlhZ1lJAx9PtY6" id="tp" target="_blank" class="play-btn-link">try</a>
+                        </li>
+                    </ul>
+                </div>
+
+            </div>
+
+
+            <div id="bad"class="artist-item-holder">
+
+                <div class="artist-profile-box">
+                    <img src="imgs/bb.jpg" alt="صورة المغني" class="artist-image">
+                    <div class="artist-name">bad bunny</div>
+                    <a href="https://open.spotify.com/artist/4q3ewBCX7sLwd24euuV69X?si=7YNDZcIIQgKci66Oi1Z5rw" target="_blank" class="spotify-btn">spotify</a>
+                </div>
+
+
+                <div class="artist-songs-box">
+                    <div class="songs-title">top 3 </div>
+                    <ul class="top-songs-list">
+                        <li class="song-item">
+                            <span class="song-rank">1</span>
+                            <span class="song-name">DtMF</span>
+                            <a href="https://open.spotify.com/track/3sK8wGT43QFpWrvNQsrQya" target="_blank" class="play-btn-link">try</a>
+                        </li>
+                        <li class="song-item">
+                            <span class="song-rank">2</span>
+                            <span class="song-name">TiTi Me Pregunto</span>
+                            <a href="https://open.spotify.com/track/1IHWl5LamUGEuP4ozKQSXZ" target="_blank" class="play-btn-link">try</a>
+                        </li>
+                        <li class="song-item">
+                            <span class="song-rank">3</span>
+                            <span class="song-name">BAILE INoLVIDABLE</span>
+                            <a href="https://open.spotify.com/track/2lTm559tuIvatlT1u0JYG2" target="_blank" class="play-btn-link">try</a>
+                        </li>
+                    </ul>
+                </div>
+
+            </div>
+        </div>
+        <div class="jinto">
+            <div class="pthree">
+                <p class="r">
+                    LIFE CHANGING
+                </p>
+                <p class="nga">
+                    here are some if my personal favorite movies that u should  give it a try.
+                </p>
+                <img class="disk" src="imgs/movies.jpg" />
+                <img class="ju" src="imgs/nga.jpg" />
+
+            </div>
+        </div>
+
+
+        <div class="scroll-container" id="movies-scroll-container">
+
+
+
+
+            <div class="movie-card">
+
+                <div id="" class="movie-poster-box">
+                    <img src="imgs/the.jpg" alt="بوستر الفيلم" class="movie-poster">
+                </div>
+
+
+                <div class="movie-info-box">
+                    <h3 class="movie-title">the Help</h3>
+
+
+                    <div class="movie-rating">
+                        <span class="rating-number">5/5 rating </span>
+                    </div>
+                </div>
+            </div>
+
+            <div id="project" class="movie-card">
+
+                <div class="movie-poster-box">
+                    <img src="imgs/project.jpg" alt="بوستر الفيلم" class="movie-poster">
+                </div>
+
+
+                <div class="movie-info-box">
+                    <h3 class="movie-title">project hail marry</h3>
+
+
+                    <div class="movie-rating">
+                        <span class="rating-number">5/5 rating </span>
+                    </div>
+                </div>
+            </div>
+
+
+            <div id="heretic" class="movie-card">
+
+                <div class="movie-poster-box">
+                    <img src="imgs/heretic.jpg" alt="بوستر الفيلم" class="movie-poster">
+                </div>
+
+
+                <div class="movie-info-box">
+                    <h3 class="movie-title">heretic</h3>
+
+
+                    <div class="movie-rating">
+                        <span class="rating-number">5/5 rating </span>
+                    </div>
+                </div>
+            </div>
+
+            <div id="mby" class="movie-card">
+
+                <div class="movie-poster-box">
+                    <img src="imgs/mby.jpg" alt="بوستر الفيلم" class="movie-poster">
+                </div>
+
+
+                <div class="movie-info-box">
+                    <h3 class="movie-title">me before you</h3>
+
+
+                    <div class="movie-rating">
+                        <span class="rating-number">5/5 rating </span>
+                    </div>
+                </div>
+            </div>
+
+
+
+            <div id="ii" class="movie-card">
+
+                <div class="movie-poster-box">
+                    <img src="imgs/ii.jpg" alt="بوستر الفيلم" class="movie-poster">
+                </div>
+
+
+                <div class="movie-info-box">
+                    <h3 class="movie-title">white chicks</h3>
+
+
+                    <div class="movie-rating">
+                        <span class="rating-number">5/5 rating </span>
+                    </div>
+                </div>
+            </div>
+
+
+
+            <div id="deliha" class="movie-card">
+
+                <div class="movie-poster-box">
+                    <img src="imgs/deliha.jpg" alt="بوستر الفيلم" class="movie-poster">
+                </div>
+
+
+                <div class="movie-info-box">
+                    <h3 class="movie-title">deliha</h3>
+
+
+                    <div class="movie-rating">
+                        <span class="rating-number">5/5 rating </span>
+                    </div>
+                </div>
+            </div>
+
+
+            <div id="saw" class="movie-card">
+
+                <div class="movie-poster-box">
+                    <img src="imgs/saw.jpg" alt="بوستر الفيلم" class="movie-poster">
+                </div>
+
+
+                <div class="movie-info-box">
+                    <h3 class="movie-title">SAW</h3>
+
+
+                    <div class="movie-rating">
+                        <span class="rating-number">5/an icon rating </span>
+                    </div>
+                </div>
+            </div>
+
+
+
+            <div id="obb" class="movie-card">
+
+                <div class="movie-poster-box">
+                    <img src="imgs/ob.jpg" alt="بوستر الفيلم" class="movie-poster">
+                </div>
+
+
+                <div class="movie-info-box">
+                    <h3 class="movie-title">obsession</h3>
+
+
+                    <div class="movie-rating">
+                        <span class="rating-number">5/4 rating </span>
+                    </div>
+                </div>
+            </div>
+
+
+
+            <div id="hmos" class="movie-card">
+
+                <div class="movie-poster-box">
+                    <img src="imgs/hm.jpg" alt="بوستر الفيلم" class="movie-poster">
+                </div>
+
+
+                <div class="movie-info-box">
+                    <h3 class="movie-title">hear me: our summer</h3>
+
+
+                    <div class="movie-rating">
+                        <span class="rating-number">5/4 rating </span>
+                    </div>
+                </div>
+            </div>
+
+
+
+            <div id="demon" class="movie-card">
+
+                <div class="movie-poster-box">
+                    <img src="imgs/demon.jpg" alt="بوستر الفيلم" class="movie-poster">
+                </div>
+
+
+                <div class="movie-info-box">
+                    <h3 class="movie-title">demon slayer:infinity castle</h3>
+
+
+                    <div class="movie-rating">
+                        <span class="rating-number">5/5 rating </span>
+                    </div>
+                </div>
+            </div>
+
+
+
+
+            <div id="black" class="movie-card">
+
+                <div class="movie-poster-box">
+                    <img src="imgs/black.jpg" alt="بوستر الفيلم" class="movie-poster">
+                </div>
+
+
+                <div class="movie-info-box">
+                    <h3 class="movie-title">black phone</h3>
+
+
+                    <div class="movie-rating">
+                        <span class="rating-number">5/4.5 rating </span>
+                    </div>
+                </div>
+            </div>
+
+
+
+
+            <div id="en" class="movie-card">
+
+                <div class="movie-poster-box">
+                    <img src="imgs/en.jpg" alt="بوستر الفيلم" class="movie-poster">
+                </div>
+
+
+                <div class="movie-info-box">
+                    <h3 class="movie-title">ENCANTO</h3>
+
+
+                    <div class="movie-rating">
+                        <span class="rating-number">5/5 rating </span>
+                    </div>
+                </div>
+            </div>
+
+            <div id="it" class="movie-card">
+
+                <div class="movie-poster-box">
+                    <img src="imgs/it.jpg" alt="بوستر الفيلم" class="movie-poster">
+                </div>
+
+
+                <div class="movie-info-box">
+                    <h3 class="movie-title">it</h3>
+
+
+                    <div class="movie-rating">
+                        <span class="rating-number">5/4 rating </span>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <div class="jinto">
+            <div class="pthree">
+                <p class="r">
+                    serieses
+                </p>
+                <p id="j" class="nga">
+                    and thats some of my personal favorite animes and series.
+                </p>
+                <img class="disk" id="sh" src="imgs/shark.jpg" />
+
+
+            </div>
+        </div>
+
+        <div class="scroll-container" id="movies-scroll-container">
+
+
+
+
+            <div class="movie-card">
+
+                <div id="" class="movie-poster-box">
+                    <img src="imgs/nn.jpg" alt="بوستر الفيلم" class="movie-poster">
+                </div>
+
+
+                <div class="movie-info-box">
+                    <h3 class="movie-title">the promised neverland</h3>
+
+
+                    <div class="movie-rating">
+                        <span class="rating-number">5/5 rating </span>
+                    </div>
+                </div>
+            </div>
+
+            <div id="project" class="movie-card">
+
+                <div class="movie-poster-box">
+                    <img src="imgs/sg.jpg" alt="بوستر الفيلم" class="movie-poster">
+                </div>
+
+
+                <div class="movie-info-box">
+                    <h3 class="movie-title">squid game</h3>
+
+
+                    <div class="movie-rating">
+                        <span class="rating-number">5/4 rating </span>
+                    </div>
+                </div>
+            </div>
+
+
+
+
+            <div id="mby" class="movie-card">
+
+                <div class="movie-poster-box">
+                    <img src="imgs/fleabag.jpg" alt="بوستر الفيلم" class="movie-poster">
+                </div>
+
+
+                <div class="movie-info-box">
+                    <h3 class="movie-title">fleabag</h3>
+
+
+                    <div class="movie-rating">
+                        <span class="rating-number">5/4 rating </span>
+                    </div>
+                </div>
+            </div>
+
+
+
+            <div id="ii" class="movie-card">
+
+                <div class="movie-poster-box">
+                    <img src="imgs/wed.jpg" alt="بوستر الفيلم" class="movie-poster">
+                </div>
+
+
+                <div class="movie-info-box">
+                    <h3 class="movie-title">wednsday</h3>
+
+
+                    <div class="movie-rating">
+                        <span class="rating-number">5/4.5 rating </span>
+                    </div>
+                </div>
+            </div>
+
+
+
+            <div id="deliha" class="movie-card">
+
+                <div class="movie-poster-box">
+                    <img src="imgs/dead.jpg" alt="بوستر الفيلم" class="movie-poster">
+                </div>
+
+
+                <div class="movie-info-box">
+                    <h3 class="movie-title">all of us are dead</h3>
+
+
+                    <div class="movie-rating">
+                        <span class="rating-number">5/5 rating </span>
+                    </div>
+                </div>
+            </div>
+
+
+
+
+
+
+            <div id="obb" class="movie-card">
+
+                <div class="movie-poster-box">
+                    <img src="imgs/xx.jpg" alt="بوستر الفيلم" class="movie-poster">
+                </div>
+
+
+                <div class="movie-info-box">
+                    <h3 class="movie-title">darling in the franxx</h3>
+
+
+                    <div class="movie-rating">
+                        <span class="rating-number">5/4.5 rating </span>
+                    </div>
+                </div>
+            </div>
+
+
+
+            <div id="hmos" class="movie-card">
+
+                <div class="movie-poster-box">
+                    <img src="imgs/demonn.jpg" alt="بوستر الفيلم" class="movie-poster">
+                </div>
+
+
+                <div class="movie-info-box">
+                    <h3 class="movie-title">demon slayer</h3>
+
+
+                    <div class="movie-rating">
+                        <span class="rating-number">5/5 rating </span>
+                    </div>
+                </div>
+            </div>
+
+
+
+            <div id="demon" class="movie-card">
+
+                <div class="movie-poster-box">
+                    <img src="imgs/dhamer.jpg" alt="بوستر الفيلم" class="movie-poster">
+                </div>
+
+
+                <div class="movie-info-box">
+                    <h3 class="movie-title">monsters</h3>
+
+
+                    <div class="movie-rating">
+                        <span class="rating-number">5/4.5 rating </span>
+                    </div>
+                </div>
+            </div>
+
+
+
+
+            <div id="black" class="movie-card">
+
+                <div class="movie-poster-box">
+                    <img src="imgs/bleach.jpg" alt="بوستر الفيلم" class="movie-poster">
+                </div>
+
+
+                <div class="movie-info-box">
+                    <h3 class="movie-title">bleach</h3>
+
+
+                    <div class="movie-rating">
+                        <span class="rating-number">5/5 rating </span>
+                    </div>
+                </div>
+            </div>
+
+
+
+
+            <div id="en" class="movie-card">
+
+                <div class="movie-poster-box">
+                    <img src="imgs/alice.jpg" alt="بوستر الفيلم" class="movie-poster">
+                </div>
+
+
+                <div class="movie-info-box">
+                    <h3 class="movie-title">alice in borderland</h3>
+
+
+                    <div class="movie-rating">
+                        <span class="rating-number">5/5 rating </span>
+                    </div>
+                </div>
+            </div>
+
+            <div id="it" class="movie-card">
+
+                <div class="movie-poster-box">
+                    <img src="imgs/atk.jpg" alt="بوستر الفيلم" class="movie-poster">
+                </div>
+
+
+                <div class="movie-info-box">
+                    <h3 class="movie-title">attack on titan</h3>
+
+
+                    <div class="movie-rating">
+                        <span class="rating-number">5/5 rating </span>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <div class="jinto">
+            <div class="pthree">
+                <p class="r">
+                    GAMING TIME!
+                </p>
+                <p id="j" class="nga">
+                    some mastterpiceses that i cannot get over.
+                </p>
+                <img class="disk" src="imgs/damn.jpg" />
+
+
+            </div>
+        </div>
+
+
+        <div class="scroll-container" id="games-scroll-container">
+
+            <!-- بطاقة اللعبة الأولى -->
+            <div id="detroit"class="game-card">
+
+                <div class="game-poster-box">
+                    <img src="imgs/tt.jpg" alt="بوستر اللعبة" class="game-poster">
+                </div>
+
+
+                <div class="game-info-box">
+                    <h3 class="game-title">detroit</h3>
+
+
+                    <div class="game-platforms">
+                        <span class="platform-badge pc">PC</span>
+                        <span class="platform-badge ps5">PS5</span>
+                       
+                    </div>
+
+
+                    <div class="game-rating">
+                        <span class="game-stars">⭐️⭐️⭐️⭐️⭐️⭐️⭐️⭐️⭐️⭐️</span>
+
+                    </div>
+                </div>
+            </div>
+
+            <!-- بطاقة اللعبة الثانية -->
+            <div id="re7"class="game-card">
+
+                <div class="game-poster-box">
+                    <img src="imgs/7.jpg" alt="بوستر اللعبة" class="game-poster">
+                </div>
+
+
+                <div class="game-info-box">
+                    <h3 class="game-title">resident evil 7</h3>
+
+
+                    <div class="game-platforms">
+                        <span class="platform-badge pc">PC</span>
+                        <span class="platform-badge ps5">PS5</span>
+                        <span class="platform-badge xbox">Xbox</span>
+                    </div>
+
+
+                    <div class="game-rating">
+                        <span class="game-stars">⭐️⭐️⭐️⭐️⭐️</span>
+
+                    </div>
+                </div>
+            </div>
+
+
+            <div id="evil2"class="game-card">
+
+                <div class="game-poster-box">
+                    <img src="imgs/tv.jpg" alt="بوستر اللعبة" class="game-poster">
+                </div>
+
+
+                <div class="game-info-box">
+                    <h3 class="game-title">the evil within 2</h3>
+
+
+                    <div class="game-platforms">
+                        <span class="platform-badge pc">PC</span>
+                        <span class="platform-badge ps5">PS5</span>
+                        <span class="platform-badge xbox">Xbox</span>
+                    </div>
+
+
+                    <div class="game-rating">
+                        <span class="game-stars">⭐️⭐️⭐️⭐️⭐️</span>
+
+                    </div>
+                </div>
+            </div>
+
+            <div id="re4"class="game-card">
+
+                <div class="game-poster-box">
+                    <img src="imgs/4.jpg" alt="بوستر اللعبة" class="game-poster">
+                </div>
+
+
+                <div class="game-info-box">
+                    <h3 class="game-title">resident evil 4</h3>
+
+
+                    <div class="game-platforms">
+                        <span class="platform-badge pc">PC</span>
+                        <span class="platform-badge ps5">PS5</span>
+                        <span class="platform-badge xbox">Xbox</span>
+                    </div>
+
+
+                    <div class="game-rating">
+                        <span class="game-stars">⭐️⭐️⭐️⭐️⭐️</span>
+
+                    </div>
+                </div>
+            </div>
+
+            <div id="devil"class="game-card">
+
+                <div class="game-poster-box">
+                    <img src="imgs/dd.jpg" alt="بوستر اللعبة" class="game-poster">
+                </div>
+
+
+                <div class="game-info-box">
+                    <h3 class="game-title">the devil in me</h3>
+
+
+                    <div class="game-platforms">
+                        <span class="platform-badge pc">PC</span>
+                        <span class="platform-badge ps5">PS5</span>
+                        <span class="platform-badge xbox">Xbox</span>
+                    </div>
+
+
+                    <div class="game-rating">
+                        <span class="game-stars">⭐️⭐️⭐️⭐️</span>
+
+                    </div>
+                </div>
+            </div>
+            <div id="two"class="game-card">
+
+                <div class="game-poster-box">
+                    <img src="imgs/itt.jpg" alt="بوستر اللعبة" class="game-poster">
+                </div>
+
+
+                <div class="game-info-box">
+                    <h3 class="game-title">it takes two</h3>
+
+
+                    <div class="game-platforms">
+                        <span class="platform-badge pc">PC</span>
+                        <span class="platform-badge ps5">PS5</span>
+                        <span class="platform-badge xbox">Xbox</span>
+                    </div>
+
+
+                    <div class="game-rating">
+                        <span class="game-stars">⭐️⭐️⭐️⭐️⭐️</span>
+
+                    </div>
+                </div>
+            </div>
+
+
+            <div id="spit"class="game-card">
+
+                <div class="game-poster-box">
+                    <img src="imgs/spit.jpg" alt="بوستر اللعبة" class="game-poster">
+                </div>
+
+
+                <div class="game-info-box">
+                    <h3 class="game-title">split fiction</h3>
+
+
+                    <div class="game-platforms">
+                        <span class="platform-badge pc">PC</span>
+                        <span class="platform-badge ps5">PS5</span>
+                        <span class="platform-badge xbox">Xbox</span>
+                    </div>
+
+
+                    <div class="game-rating">
+                        <span class="game-stars">⭐️⭐️⭐️⭐️⭐️⭐️⭐️⭐️⭐️⭐️</span>
+
+                    </div>
+                </div>
+            </div>
+
+            <div id="out"class="game-card">
+
+                <div class="game-poster-box">
+                    <img src="imgs/out.jpg" alt="بوستر اللعبة" class="game-poster">
+                </div>
+
+
+                <div class="game-info-box">
+                    <h3 class="game-title">a way out</h3>
+
+
+                    <div class="game-platforms">
+                        <span class="platform-badge pc">PC</span>
+                        <span class="platform-badge ps5">PS5</span>
+                        <span class="platform-badge xbox">Xbox</span>
+                    </div>
+
+
+                    <div class="game-rating">
+                        <span class="game-stars">⭐️⭐️⭐️⭐️⭐️</span>
+
+                    </div>
+                </div>
+            </div>
+
+
+            <div id="five"class="game-card">
+
+                <div class="game-poster-box">
+                    <img src="imgs/d5.jpg" alt="بوستر اللعبة" class="game-poster">
+                </div>
+
+
+                <div class="game-info-box">
+                    <h3 class="game-title">devil may cry 5</h3>
+
+
+                    <div class="game-platforms">
+                        <span class="platform-badge pc">PC</span>
+                        <span class="platform-badge ps5">PS5</span>
+                        <span class="platform-badge xbox">Xbox</span>
+                    </div>
+
+
+                    <div class="game-rating">
+                        <span class="game-stars">⭐️⭐️⭐️⭐️</span>
+
+                    </div>
+                </div>
+            </div>
+
+            <div id="cup"class="game-card">
+
+                <div class="game-poster-box">
+                    <img src="imgs/cup.jpg" alt="بوستر اللعبة" class="game-poster">
+                </div>
+
+
+                <div class="game-info-box">
+                    <h3 class="game-title">cuphead</h3>
+
+
+                    <div class="game-platforms">
+                        <span class="platform-badge pc">PC</span>
+                        <span class="platform-badge ps5">PS5</span>
+                        <span class="platform-badge xbox">Xbox</span>
+                    </div>
+
+
+                    <div class="game-rating">
+                        <span class="game-stars">⭐️⭐️⭐️⭐️⭐️</span>
+
+                    </div>
+                </div>
+            </div>
+
+            <div id="under"class="game-card">
+
+                <div class="game-poster-box">
+                    <img src="imgs/und.jpg" alt="بوستر اللعبة" class="game-poster">
+                </div>
+
+
+                <div class="game-info-box">
+                    <h3 class="game-title">undertale</h3>
+
+
+                    <div class="game-platforms">
+                        <span class="platform-badge pc">PC</span>
+                        <span class="platform-badge ps5">PS5</span>
+                        <span class="platform-badge xbox">Xbox</span>
+                    </div>
+
+
+                    <div class="game-rating">
+                        <span class="game-stars">⭐️⭐️⭐️⭐️</span>
+
+                    </div>
+                </div>
+            </div>
+
+            <div id="snow"class="game-card">
+
+                <div class="game-poster-box">
+                    <img src="imgs/cel.jpg" alt="بوستر اللعبة" class="game-poster">
+                </div>
+
+
+                <div class="game-info-box">
+                    <h3 class="game-title">celeste</h3>
+
+
+                    <div class="game-platforms">
+                        <span class="platform-badge pc">PC</span>
+                        <span class="platform-badge ps5">PS5</span>
+                        <span class="platform-badge xbox">Xbox</span>
+                    </div>
+
+
+                    <div class="game-rating">
+                        <span class="game-stars">⭐️⭐️⭐️⭐️⭐️</span>
+
+                    </div>
+                </div>
+            </div>
+
+
+            <div id="god"class="game-card">
+
+                <div class="game-poster-box">
+                    <img src="imgs/god.jpg" alt="بوستر اللعبة" class="game-poster">
+                </div>
+
+
+                <div class="game-info-box">
+                    <h3 class="game-title">god of war</h3>
+
+
+                    <div class="game-platforms">
+                        <span class="platform-badge pc">PC</span>
+                        <span class="platform-badge ps5">PS5</span>
+                       
+                    </div>
+
+
+                    <div class="game-rating">
+                        <span class="game-stars">⭐️⭐️⭐️⭐️</span>
+
+                    </div>
+                </div>
+            </div>
+
+
+            <div id="eleven"class="game-card">
+
+                <div class="game-poster-box">
+                    <img src="imgs/11.jpg" alt="بوستر اللعبة" class="game-poster">
+                </div>
+
+
+                <div class="game-info-box">
+                    <h3 class="game-title">MK11</h3>
+
+
+                    <div class="game-platforms">
+                        <span class="platform-badge pc">PC</span>
+                        <span class="platform-badge ps5">PS5</span>
+                        <span class="platform-badge xbox">Xbox</span>
+                    </div>
+
+
+                    <div class="game-rating">
+                        <span class="game-stars">⭐️⭐️⭐️⭐️</span>
+
+                    </div>
+                </div>
+            </div>
+
+
+            <div id="rise"class="game-card">
+
+                <div class="game-poster-box">
+                    <img src="imgs/lara.jpg" alt="بوستر اللعبة" class="game-poster">
+                </div>
+
+
+                <div class="game-info-box">
+                    <h3 class="game-title">rise of tomb raider</h3>
+
+
+                    <div class="game-platforms">
+                        <span class="platform-badge pc">PC</span>
+                        <span class="platform-badge ps5">PS5</span>
+                        <span class="platform-badge xbox">Xbox</span>
+                    </div>
+
+
+                    <div class="game-rating">
+                        <span class="game-stars">⭐️⭐️⭐️⭐️⭐️</span>
+
+                    </div>
+                </div>
+            </div>
+
+        </div>
+
+    </div>
+
+    <script src="main.js"></script>
+    
+</body>
+</html>
