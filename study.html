@@ -2,13 +2,14 @@
 <html>
 <head>
     <title>abood-art</title>
+    
     <link rel="preconnect" href="https://googleapis.com">
     <link rel="preconnect" href="https://gstatic.com" crossorigin>
     <link href="https://googleapis.com/css2?family=Montserrat:wght@400;500;700;900&display=swap" rel="stylesheet">
     <style>
 
-        @import url('https://fonts.googleapis.com/css2?family=Pixelify+Sans&display=swap');
-
+       
+        @import url('https://googleapis.com');
         ::-webkit-scrollbar {
             width: 12px; 
         }
@@ -60,6 +61,12 @@
             position:sticky;
             z-index:1000;
             top:0;
+        }
+        @media (max-width: 600px) {
+            .n {
+                height: auto !important;
+                padding: 10px !important;
+            }
         }
 
         .dom {
@@ -235,7 +242,7 @@
             -webkit-user-drag: none;
         }
 
-        @media(max-width:974px) {
+       @media(max-width:974px) {
             body > *:not(.dom) {
                 display: none !important;
             }
