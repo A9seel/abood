@@ -4,7 +4,7 @@
     <title>abood-art</title>
     
     <link rel="preconnect" href="https://googleapis.com">
-    <link rel="preconnect" href="https://gstatic.com" crossorigin>
+    <link rel="preconnect" href="https://gstatic.com" >
     <link href="https://googleapis.com/css2?family=Montserrat:wght@400;500;700;900&display=swap" rel="stylesheet">
     <style>
         
@@ -31,7 +31,7 @@
 
            
             ::-webkit-scrollbar-thumb:hover {
-                background: #881520; 
+                background: #f8244b; 
             }
         html{
             scroll-behavior:smooth;
@@ -43,10 +43,11 @@
         }
 
         body {
-            background-color: #F2F4F3;
+            background-color: #161712;
             margin: 0;
             padding: 0;
-            min-height: 4500px;
+            min-height: 4300px;
+           
             
         }
 
@@ -58,10 +59,11 @@
             border-bottom-left-radius: 10px;
             height: 95px;
             display: flex;
-            justify-content: space-between;
-            box-shadow: 5px 0px 15px rgba(0,0,0,1);
+            justify-content:center;
+            box-shadow: 5px 15px 15px rgb(0, 0, 0);
             position:sticky;
             z-index:1000;
+            align-items:center;
             top:0;
         }
 
@@ -93,25 +95,25 @@
 
             .w:hover {
                 border-radius: 20px;
-                background-color: #F2F4F3;
+                background-color: #fb3359;
                 color: black;
-                box-shadow: 5px 0px 15px #F2F4F3;
+                box-shadow: 5px 0px 15px #fd2e56;
             }
 
             .ww:hover {
                 border-radius: 20px;
-                background-color: #F2F4F3;
+                background-color: #fe2a53;
                 color: black;
-                box-shadow: 5px 0px 15px #F2F4F3;
+                box-shadow: 5px 0px 10px  #fd2e56;
             }
 
         .abd {
-            width: 85px;
-            border-radius: 50%;
-            object-fit: cover;
-            height: 85px;
-            object-position: bottom;
-            padding-left: 10px;
+            width: 500px;
+            
+          
+
+           
+           
             user-select: none;
             -webkit-user-select: none;
             -ms-user-select: none;
@@ -124,24 +126,30 @@
 
         .words {
             padding-right: 25px;
-            padding-top: 30px;
+        
             float: right;
             padding-left: 10px;
         }
 
         .b {
-            padding-left: 30px;
+           align-items:center;
+           justify-items:center;
             user-select: none;
+            width:100%;
+            background:#00000000;
             -webkit-user-select: none;
             -ms-user-select: none;
             -webkit-user-drag: none;
+            color:#f2f4f3;
+            padding-top:20px;
+            padding-bottom:20px;
         }
 
         .bp {
             font-size: 70px;
             font-family: "Indie Flower";
-            padding-left: 60px;
-            display: inline-block;
+           
+           
             margin-bottom: 10px;
             user-select: none;
             -webkit-user-select: none;
@@ -152,13 +160,14 @@
         .p {
             font-size: 25px;
             font-family: "Indie Flower";
-            padding-left: 60px;
+          
             display: block;
             margin-top: 0px;
+            justify-items:center;
             display: grid;
             grid-template-columns: 500px;
-            margin-bottom: 100px;
-            margin-bottom: 0px;
+            
+            
         }
 
         .name {
@@ -175,20 +184,7 @@
             -webkit-user-drag: none;
         }
 
-        .ee {
-            width: 250px;
-            position: absolute;
-            height: auto;
-            pointer-events: none;
-            z-index: 10;
-            top: 94px;
-            right: 20px;
-            mix-blend-mode: multiply;
-            user-select: none;
-            -webkit-user-select: none;
-            -ms-user-select: none;
-            -webkit-user-drag: none;
-        }
+       
 
         .scroll-container {
             width: 100%;
@@ -197,8 +193,9 @@
             white-space: nowrap;
             padding: 10px;
             gap: 15px;
-            background-color: black;
+            background:black;
             user-select: none;
+            color:white;
         }
 
             .scroll-container::-webkit-scrollbar {
@@ -208,7 +205,9 @@
             .scroll-container:hover {
                 cursor: grab;
             }
-
+        #about-me {
+            background: linear-gradient(to left,#ff1348,#50040f,black);
+        }
         .item {
             flex: 0 0 auto;
             width: 350px;
@@ -228,37 +227,23 @@
             position: relative;
         }
 
-        .swall {
-            mix-blend-mode: multiply;
-            width: 700px;
-            display: flex;
-            margin: 20px;
-            user-select: none;
-            -webkit-user-select: none;
-            -ms-user-select: none;
-            -webkit-user-drag: none;
-        }
+        
 
         @media(max-width:974px) {
-            body > *:not(.dom) {
-                display: none !important;
-            }
-
-            .dom {
-                display: flex !important;
-                font-size: 20px;
-                justify-content: center;
-                text-align: center;
-                align-items: center;
-                font-family: "Indie Flower";
-                height: 100vh;
-                background-color: black;
-                color: #F2F4F3;
-            }
-
-            .body {
-                height: 1000px;
-            }
+           #d{
+               display:none;
+           }
+           .w,.ww{
+               font-size:13px;
+               margin-left:10px;
+               margin-right:15px;
+           }
+           .disk{
+               display:none;
+           }
+           .bizza{
+               display:none;
+           }
         }
 
         .ch {
@@ -267,8 +252,11 @@
         }
 
         #aboutme {
-            background-image: url('imgs/about me.jpg');
-            background-size: cover;
+            background: #000000;
+            user-select: none;
+            -webkit-user-select: none;
+            -ms-user-select: none;
+            -webkit-user-drag: none;
             background-position: center;
             background-repeat: no-repeat;
             border-style: none;
@@ -347,12 +335,12 @@
 
         .note {
             mix-blend-mode: multiply;
-            width: 100px;
+            width: 90px;
             display: flex;
             position: absolute;
             bottom: 3px;
-            left: 110px;
-            height: 100px;
+            left: 120px;
+           
             object-fit: cover;
             user-select: none;
             -webkit-user-select: none;
@@ -375,12 +363,12 @@
 
         .blood {
             mix-blend-mode: multiply;
-            width: 250px;
+            width: 150px;
             display: flex;
             position: absolute;
             bottom: 30px;
-            left: 50px;
-            height: 100px;
+            left: 150px;
+            
             object-fit: cover;
             user-select: none;
             -webkit-user-select: none;
@@ -406,12 +394,17 @@
             font-family: "Indie Flower";
             padding-left: 60px;
             display: inline-block;
+            justify-items:center;
+            justify-self:center;
+            align-items:center;
+            align-self:center;
             margin-bottom: 10px;
             margin-top: 30px;
             user-select: none;
             -webkit-user-select: none;
             -ms-user-select: none;
             -webkit-user-drag: none;
+            color: #f2f4f3;
         }
 
         .nga {
@@ -422,29 +415,18 @@
             margin-top: 0px;
             display: grid;
             grid-template-columns: 500px;
-            margin-bottom: 100px;
-            margin-bottom: 0px;
+            margin-bottom: 50px;
+           color:#f2f4f3;
             user-select: none;
             -webkit-user-select: none;
             -ms-user-select: none;
             -webkit-user-drag: none;
+           
         }
 
-        .juju {
-            mix-blend-mode: multiply;
-            width: 400px;
-            display: flex;
-            height: 100px;
-            object-fit: cover;
-            user-select: none;
-            -webkit-user-select: none;
-            -ms-user-select: none;
-            -webkit-user-drag: none;
-            margin-bottom: 30px;
-            overflow: hidden
-        }
+       
         .du {
-            mix-blend-mode: multiply;
+           
            width:100px;
             user-select: none;
             -webkit-user-select: none;
@@ -456,20 +438,7 @@
             position:absolute;
             left:0px;
         }
-        .ju {
-            mix-blend-mode: multiply;
-           
-            width: 200px;
-            display: flex;
-            object-fit: cover;
-            height: 200px;
-            user-select: none;
-            -webkit-user-select: none;
-            -ms-user-select: none;
-            -webkit-user-drag: none;
-            margin-bottom: 30px;
-            overflow: hidden
-        }
+      
 
         .shark {
             mix-blend-mode: multiply;
@@ -502,7 +471,7 @@
             z-index: 10;
             margin-top: -390px;
             right: 20px;
-            mix-blend-mode: multiply;
+           
             user-select: none;
             -webkit-user-select: none;
             -ms-user-select: none;
@@ -511,21 +480,25 @@
 
         .itemm {
             flex: 0 0 auto;
-            width: 200px;
-            height: 150px;
+            width: 250px;
+            height: auto;
+            flex-direction:row-reverse;
             background-color: #F2F4F3;
             border-width: 2px;
             border-color: #F2F4F3;
             border-style: solid;
-            border-radius: 8px;
+            border-radius: 100px;
             display: flex;
             align-items: center;
-            justify-content: center;
+            justify-content:flex-start;
             color: black;
             font-family: "Indie Flower";
             font-size: 25px;
             position: relative;
             transition: 0.15s;
+           gap:12px;
+           padding:10px 15px;
+           border:2px solid black
         }
             .itemm:hover {
                 transform: translateY(-5px);
@@ -549,11 +522,11 @@
 
         .icon {
             mix-blend-mode: multiply;
-            width: 90px;
+            width: 50px;
             display: flex;
             position: absolute;
-            top: 10px;
-            height: 90px;
+            left:10px;
+            
             object-fit: cover;
             user-select: none;
             -webkit-user-select: none;
@@ -562,19 +535,41 @@
         }
 
         #igg {
-            width: 70px;
-            height: 80px;
-        }
+            width:50px;
+           
 
+        }
+        #ig{
+            width:230px;
+        }
+        #tikk{
+            width:220px;
+        }
+        
+        #spotyy{
+            width:170px;
+        }
+        #steamm{
+            width:210px;
+        }
+        #snapp{
+            width:200px;
+        }
+        #telll{
+            width:210px;
+        }
+        #whatt{
+            width:215px;
+        }
         #steam, #tell {
-            width: 70px;
-            height: 70px;
-            top: 20px;
+            width: 50px;
+            
+           
         }
 
         #snap {
-            width: 78px;
-            height: 80px;
+            width: 50px;
+            
         }
 
         .dkma, .dkmaa {
@@ -583,16 +578,18 @@
             background-color: transparent;
             font-size: 25px;
             border-width: 2px;
-            border-radius: 10px;
+            border-radius: 100px;
             border-style: outset solid;
             padding: 1px 5px 2px 4px;
             border-color: black;
             cursor: pointer;
             transition: 0.18s;
+            align-items:center;
+            white-space:nowrap;
             color: black;
-            display: flex;
-            position: absolute;
-            bottom: 10px;
+            display: inline-flex;
+            
+           
             user-select: none;
             -webkit-user-select: none;
             -ms-user-select: none;
@@ -618,9 +615,9 @@
             height: auto;
             pointer-events: none;
             z-index: 10;
-            margin-top: -150px;
+            margin-top: -240px;
             right: 20px;
-            mix-blend-mode: multiply;
+           
             user-select: none;
             -webkit-user-select: none;
             -ms-user-select: none;
@@ -631,7 +628,7 @@
 
         #artists-scroll-container {
             display: flex;
-            margin-top: 150px;
+            margin-top: 15px;
             gap: 20px;
             overflow-x: auto;
             padding: 20px 10px;
@@ -1149,7 +1146,7 @@
             -webkit-overflow-scrolling: touch;
             scrollbar-width: none; /* إخفاء السكرول لفايرفوكس */
             background-color:black;
-            margin-top:300px;
+            margin-top:100px;
         }
 
             #games-scroll-container::-webkit-scrollbar {
@@ -1444,6 +1441,63 @@
             box-shadow: 0 10px 30px rgb(111, 221, 150);
             border: 2px solid #1db954ff;
         }
+
+
+        .all {
+            width: 100%;
+            background: linear-gradient(to left,black,#ff2c51,black);
+            
+        }
+
+        .portal {
+            user-select: none;
+            -webkit-user-select: none;
+            -ms-user-select: none;
+            -webkit-user-drag: none;
+        }
+
+
+
+        .profile-back{
+            width:100%;
+            height:350px;
+            background:#040607;
+        }
+        .profile{
+            width:100%;
+            height:150px;
+            position:absolute;
+            justify-items:center;
+        
+        }
+        #kk {
+            border-radius: 100px;
+            width: 70%;
+            background:#f2f4f3;
+            height: 90px;
+           
+            transition:0.5s;
+            justify-items: center;
+            justify-self: center;
+            
+        }
+            .pthree{
+               
+                justify-self:center;
+            }
+           #d{
+               bottom:-3020px;
+              
+           }
+        #house:hover {
+            box-shadow: 0 10px 30px rgb(157, 53, 51);
+            border: 2px solid #59090a;
+        }
+        #last:hover {
+            box-shadow: 0 10px 30px rgb(255, 188, 125);
+            border: 2px solid #86543e;
+        }
+         
     </style>
 
 
@@ -1452,16 +1506,29 @@
 </head>
 
 <body>
+    <div class="profile-back">
+        
 
-    <div class="dom">
-        sorry... you can only see this on your computer>_<
+
+
+        <div class="profile">
+
+
+
+
+            <div class="img">
+               <img class="abd" src="https://i.pinimg.com/originals/57/52/1e/57521e44486b536872c9416c465e9079.gif" />
+
+            </div>
+        </div>
     </div>
+   
 
 
     <div class="n">
         <div class="words">
 
-            <a class=" w" href="#about me">
+            <a class=" w" href="#about-me">
                 about me
             </a>
             <a class=" w" href="#my socials">
@@ -1476,37 +1543,31 @@
             <a class="w" href="#games-scroll-container">
                 games
             </a>
-
+            <a class="w" href="new.html">
+                what's new?
+            </a>
         </div>
-        <div class="img">
-            <img class="abd" src="imgs/abd.jpg" />
-            <p class="name">
-                @abdheroo
-            </p>
-        </div>
+      
 
     </div>
 
 
     <div class="b">
         <p class="bp">
-            hello...
+            WELCOME!
 
         </p>
         <p class="p">
             you will find anything you need or want to know about me in this page. my favorite songs, movies, shows, series and more...
         </p>
-        <img class="ee" src="imgs/spider.jpg" />
-
-    </div>
-    <div class="wall">
-        <img class="swall" src="imgs/wall spider.jpg" />
-
+       
     </div>
 
-    <div class="scroll-container"  id="about me">
+
+    <div class="scroll-container"  id="about-me">
 
         <div class="item" id="aboutme">
+            <img class="portal" src="https://i.pinimg.com/originals/f2/e3/7e/f2e37eda926f7827265abcfe9aa1be1e.gif" />
         </div>
         <div class="item" id="me">
             <p class="me">
@@ -1514,19 +1575,19 @@
             </p>
             <p>
                 name: Abdulrahman mohamed<br />
-                age:  18<br />
+                age:  19<br />
                 from: Iraq<br />
                 height: 183cm<br />
                 birthday:26/12/2007<br />
-                addicted to music too..
+                
             </p>
-            <img class="sonic" src="imgs/sonic.jpg" />
+            <img class="sonic" src="imgs/gg.png" />
             <img class="hearts" src="imgs/hearts.jpg" />
         </div>
         <div class="item" id=" hobbies">
             <p class="HOBBIES">HOBBIES</p>
             <p>
-                I am an<br />
+                I am an :<br />
                 artist<br />
                 writer<br />
                 developer<br />
@@ -1536,7 +1597,7 @@
 
             </p>
             <img class="sonic" src="imgs/iloveu.jpg" />
-            <img class="stars" src="imgs/stars.jpg" />
+            <img class="stars" src="imgs/fire.png" />
         </div>
 
         <div class="item">
@@ -1550,8 +1611,8 @@
                 ASL<br />
                 and one day..<br /> i'm leaving this place.
             </p>
-            <img class="note" src="imgs/note.jpg" />
-            <img class="guitar" src="imgs/guitar.jpg" />
+            <img class="note" src="https://i.pinimg.com/736x/5d/3b/a1/5d3ba10ad447d460391b8a032506e9fd.jpg" />
+            <img class="guitar" src="imgs/bat.jpe" />
         </div>
         <div class="item">
             <p class="major">MY MAJOR</p>
@@ -1561,8 +1622,8 @@
                 I'm a student at Al-Nahrain uni<br />
                 studyng network eng.
             </p>
-            <img class="blood" src="imgs/blood.jpg" />
-            <img class="dog" src="imgs/dog.jpg" />
+            <img class="blood" src="https://i.pinimg.com/originals/42/c6/2a/42c62a68fa0154599d1da42a43ac6dcd.gif" />
+            <img class="dog" src="imgs/ho.jpe" />
         </div>
     </div>
     <div class="sinto" id="my socials" >
@@ -1578,73 +1639,77 @@
                 you don't have my accounts?!<br />
                 I got u bro...
             </p>
-            <img class="juju" src="imgs/juju.jpg" />
-            <img class="bizza" src="imgs/poster.jpg" />
+            
+            <img class="bizza" src="https://i.pinimg.com/originals/85/73/25/857325dcd29c8579f00a959cf13940bc.gif" />
         </div>
+        <div class="all">
+            <div class="scroll-container" id="kk">
 
-        <div class="scroll-container" >
 
+                <div class="itemm" id="ig">
+                    <img class="icon" id="igg" src="imgs/ig.jpg" />
+                    <a class="dkma" href="https://www.instagram.com/abdheroo/" target="_blank">
+                        abdheroo
+                    </a>
+                </div>
+                <div class="itemm" id="ig">
+                    <img class="icon" id="igg" src="imgs/ig.jpg" />
+                    <a class="dkma" href="https://www.instagram.com/abdindetail/" target="_blank">
+                        abdindetail
+                    </a>
+                </div>
+                <div class="itemm" id="tikk">
+                    <img class="icon" id=" tik" src="imgs/tik.jpg" />
+                    <a class="dkma" href="https://www.tiktok.com/@abdtx.wq2?lang=ar" target="_blank">
+                        abdtx.wq2
+                    </a>
+                </div>
 
-            <div class="itemm" id="ig">
-                <img class="icon" id="igg" src="imgs/ig.jpg" />
-                <a class="dkma" href="https://www.instagram.com/abdheroo/" target="_blank">
-                    abdheroo
-                </a>
-            </div>
-            <div class="itemm" id="ig">
-                <img class="icon" id="igg" src="imgs/ig.jpg" />
-                <a class="dkma" href="https://www.instagram.com/abdindetail/" target="_blank">
-                    abdindetail
-                </a>
-            </div>
-            <div class="itemm" id="tikk">
-                <img class="icon" id=" tik" src="imgs/tik.jpg" />
-                <a class="dkma" href="https://www.tiktok.com/@abdtx.wq2?lang=ar" target="_blank">
-                    abdtx.wq2
-                </a>
+                <div class="itemm" id="spotyy">
+                    <img class="icon" id="spoty" src="imgs/spoty.jpg" />
+                    <a class="dkma" href="https://open.spotify.com/user/d3xwztsk0kr590nbd6nt8664g?si=890e3ff456f64edb" target="_blank">
+                        abood
+                    </a>
+
+                </div>
+                <div class="itemm" id="diss">
+                    <img class="icon" id="dis" src="imgs/dis.jpg" />
+                    <p class="dkmaa">
+                        thekiller9661
+                    </p>
+                </div>
+                <div class="itemm" id="steamm">
+                    <img class="icon" id="steam" src="imgs/steam.jpg" />
+                    <a class="dkma" href="https://store.steampowered.com/account/" target="_blank">
+                        goob3211
+                    </a>
+                </div>
+                <div class="itemm" id="snapp">
+                    <img class="icon" id="snap" src="imgs/snap.jpg" />
+                    <a class="dkma" href="https://www.snapchat.com/add/iabod5h?share_id=3HEmwmEx7To&locale=ar-EG" target="_blank">
+                        iabod5h
+                    </a>
+                </div>
+                <div class="itemm" id="telll">
+                    <img class="icon" id="tell" src="imgs/tell.jpg" />
+                    <a class="dkma" href="https://t.me/Abdtw_91" target="_blank">
+                        Abdtw_91
+                    </a>
+                </div>
+                <div class="itemm" id="whatt">
+                    <img class="icon" id="what" src="imgs/what.jpg" />
+                    <p class="dkmaa">
+                        aboodwt2
+                    </p>
+                </div>
+
             </div>
 
-            <div class="itemm" id="spotyy">
-                <img class="icon" id="spoty" src="imgs/spoty.jpg" />
-                <a class="dkma" href="https://open.spotify.com/user/d3xwztsk0kr590nbd6nt8664g?si=890e3ff456f64edb" target="_blank">
-                    abood
-                </a>
-
-            </div>
-            <div class="itemm"id="diss">
-                <img class="icon" id="dis" src="imgs/dis.jpg" />
-                <p class="dkmaa">
-                    thekiller9661
-                </p>
-            </div>
-            <div class="itemm" id="steamm">
-                <img class="icon" id="steam" src="imgs/steam.jpg" />
-                <a class="dkma" href="https://store.steampowered.com/account/" target="_blank">
-                    goob3211
-                </a>
-            </div>
-            <div class="itemm"id="snapp">
-                <img class="icon" id="snap" src="imgs/snap.jpg" />
-                <a class="dkma" href="https://www.snapchat.com/add/iabod5h?share_id=3HEmwmEx7To&locale=ar-EG" target="_blank">
-                    iabod5h
-                </a>
-            </div>
-            <div class="itemm"id="telll">
-                <img class="icon" id="tell" src="imgs/tell.jpg" />
-                <a class="dkma" href="https://t.me/Abdtw_91" target="_blank">
-                    Abdtw_91
-                </a>
-            </div>
-            <div class="itemm"id="whatt">
-                <img class="icon" id="what" src="imgs/what.jpg" />
-                <p class="dkmaa">
-                    aboodwt2
-                </p>
-            </div>
 
 
 
         </div>
+        
         <div class="binto" id="art-scroll">
             <div class="pthree">
                 <p class="r">
@@ -1656,7 +1721,7 @@
                     HELL  NO!<br />
                     so here is a list of my top artists and bands and my top 3 songs by them.
                 </p>
-                <img class="disk" src="imgs/drump.jpg" />
+                <img class="disk" src="https://i.pinimg.com/originals/01/b7/18/01b7185ddb6fdb5fa89602534610dd9f.gif" />
 
             </div>
         </div>
@@ -1712,8 +1777,8 @@
                     <ul class="top-songs-list">
                         <li class="song-item">
                             <span id="michelr" class="song-rank">1</span>
-                            <span class="song-name">human nuture</span>
-                            <a href="https://open.spotify.com/track/4cgjA7B4fJBHyB9Ya2bu0t?si=a919b33952464a37" id="michelp" target="_blank" class="play-btn-link">try</a>
+                            <span class="song-name">in the closet</span>
+                            <a href="https://open.spotify.com/track/5Fy40smNxk0j5OpFMtvfaU" id="michelp" target="_blank" class="play-btn-link">try</a>
 
                         </li>
 
@@ -1725,8 +1790,8 @@
 
                         <li class="song-item">
                             <span id="michelr" class="song-rank">3</span>
-                            <span class="song-name">rock my world</span>
-                            <a href="https://open.spotify.com/track/4oY2T9ur7Ll5b2kpBlcWcb?si=75b0ceabaf6d4fb8" id="michelp" target="_blank" class="play-btn-link">try</a>
+                            <span class="song-name">human nuture</span>
+                            <a href="https://open.spotify.com/track/4cgjA7B4fJBHyB9Ya2bu0t?si=a919b33952464a37" id="michelp" target="_blank" class="play-btn-link">try</a>
                         </li>
 
                     </ul>
@@ -1882,8 +1947,8 @@
                     <ul class="top-songs-list">
                         <li class="song-item">
                             <span id="adr" class="song-rank">1</span>
-                            <span class="song-name">when we were younger</span>
-                            <a href="https://open.spotify.com/track/6O5TrlFWTYvznd9fMC0VvU" id="adp" target="_blank" class="play-btn-link">try</a>
+                            <span class="song-name">to be loved</span>
+                            <a href="https://open.spotify.com/track/10ImcQk9tihY1EKMDIbvXJ" id="adp" target="_blank" class="play-btn-link">try</a>
                         </li>
                         <li class="song-item">
                             <span id="adr" class="song-rank">2</span>
@@ -1916,8 +1981,8 @@
                     <ul class="top-songs-list">
                         <li class="song-item">
                             <span id="marir" class="song-rank">1</span>
-                            <span class="song-name">little by little</span>
-                            <a href="https://open.spotify.com/track/3EzlgdxyFvjeAGzR5WxHB8" id="marip" target="_blank" class="play-btn-link">try</a>
+                            <span class="song-name">ay no puedo</span>
+                            <a href="https://open.spotify.com/track/3L0JDlycMhSA7R0M0OfNIY" id="marip" target="_blank" class="play-btn-link">try</a>
                         </li>
                         <li class="song-item">
                             <span id="marir" class="song-rank">2</span>
@@ -1926,8 +1991,8 @@
                         </li>
                         <li class="song-item">
                             <span id="marir" class="song-rank">3</span>
-                            <span class="song-name">sienna</span>
-                            <a href="https://open.spotify.com/track/0InIeZW4P6VO7dUGRM4AKH" id="marip" target="_blank" class="play-btn-link">try</a>
+                            <span class="song-name">run your mouth</span>
+                            <a href="https://open.spotify.com/track/19fKJrO9XdOf6Xla2QHecO" id="marip" target="_blank" class="play-btn-link">try</a>
                         </li>
                     </ul>
                 </div>
@@ -2059,8 +2124,8 @@
                         </li>
                         <li class="song-item">
                             <span id="tr" class="song-rank">3</span>
-                            <span class="song-name">daylight</span>
-                            <a href="https://open.spotify.com/track/1fzAuUVbzlhZ1lJAx9PtY6" id="tp" target="_blank" class="play-btn-link">try</a>
+                            <span class="song-name">I knew it, i knew you</span>
+                            <a href="https://open.spotify.com/track/5uPaqMMt59KGrdKIitDRqa" id="tp" target="_blank" class="play-btn-link">try</a>
                         </li>
                     </ul>
                 </div>
@@ -2108,8 +2173,8 @@
                 <p class="nga">
                     here are some my personal favorite movies that u should  give them a try.
                 </p>
-                <img class="disk" src="imgs/movies.jpg" />
-                <img class="ju" src="imgs/nga.jpg" />
+                <img class="disk" src="https://i.pinimg.com/originals/9a/86/1d/9a861d07cca8f728ccba27a862316b2d.gif" />
+              
 
             </div>
         </div>
@@ -2368,9 +2433,7 @@
                 <p id="j" class="nga">
                     and thats some of my personal favorite animes and series.
                 </p>
-                <img class="disk" id="sh" src="imgs/shark.jpg" />
-
-
+                
             </div>
         </div>
 
@@ -2597,7 +2660,7 @@
                 <p id="j" class="nga">
                     some masterpieceses that I cannot get over.
                 </p>
-                <img class="disk" src="imgs/damn.jpg" />
+                <img class="disk" id="d" src="https://i.pinimg.com/originals/a5/39/fd/a539fd7828c02d2872c5c5eb1af3b97d.gif" />
 
 
             </div>
@@ -2607,7 +2670,7 @@
         <div class="scroll-container" id="games-scroll-container">
 
             <!-- بطاقة اللعبة الأولى -->
-            <div id="detroit"class="game-card">
+            <div id="detroit" class="game-card">
 
                 <div class="game-poster-box">
                     <img src="imgs/tt.jpg" alt="بوستر اللعبة" class="game-poster">
@@ -2621,7 +2684,7 @@
                     <div class="game-platforms">
                         <span class="platform-badge pc">PC</span>
                         <span class="platform-badge ps5">PS5</span>
-                       
+
                     </div>
 
 
@@ -2633,7 +2696,7 @@
             </div>
 
             <!-- بطاقة اللعبة الثانية -->
-            <div id="re7"class="game-card">
+            <div id="re7" class="game-card">
 
                 <div class="game-poster-box">
                     <img src="imgs/7.jpg" alt="بوستر اللعبة" class="game-poster">
@@ -2659,7 +2722,7 @@
             </div>
 
 
-            <div id="evil2"class="game-card">
+            <div id="evil2" class="game-card">
 
                 <div class="game-poster-box">
                     <img src="imgs/tv.jpg" alt="بوستر اللعبة" class="game-poster">
@@ -2684,7 +2747,7 @@
                 </div>
             </div>
 
-            <div id="re4"class="game-card">
+            <div id="re4" class="game-card">
 
                 <div class="game-poster-box">
                     <img src="imgs/4.jpg" alt="بوستر اللعبة" class="game-poster">
@@ -2709,7 +2772,7 @@
                 </div>
             </div>
 
-            <div id="devil"class="game-card">
+            <div id="devil" class="game-card">
 
                 <div class="game-poster-box">
                     <img src="imgs/dd.jpg" alt="بوستر اللعبة" class="game-poster">
@@ -2733,7 +2796,7 @@
                     </div>
                 </div>
             </div>
-            <div id="two"class="game-card">
+            <div id="two" class="game-card">
 
                 <div class="game-poster-box">
                     <img src="imgs/itt.jpg" alt="بوستر اللعبة" class="game-poster">
@@ -2759,7 +2822,7 @@
             </div>
 
 
-            <div id="spit"class="game-card">
+            <div id="spit" class="game-card">
 
                 <div class="game-poster-box">
                     <img src="imgs/spit.jpg" alt="بوستر اللعبة" class="game-poster">
@@ -2784,7 +2847,7 @@
                 </div>
             </div>
 
-            <div id="out"class="game-card">
+            <div id="out" class="game-card">
 
                 <div class="game-poster-box">
                     <img src="imgs/out.jpg" alt="بوستر اللعبة" class="game-poster">
@@ -2810,7 +2873,7 @@
             </div>
 
 
-            <div id="five"class="game-card">
+            <div id="five" class="game-card">
 
                 <div class="game-poster-box">
                     <img src="imgs/d5.jpg" alt="بوستر اللعبة" class="game-poster">
@@ -2835,7 +2898,7 @@
                 </div>
             </div>
 
-            <div id="cup"class="game-card">
+            <div id="cup" class="game-card">
 
                 <div class="game-poster-box">
                     <img src="imgs/cup.jpg" alt="بوستر اللعبة" class="game-poster">
@@ -2860,7 +2923,7 @@
                 </div>
             </div>
 
-            <div id="under"class="game-card">
+            <div id="under" class="game-card">
 
                 <div class="game-poster-box">
                     <img src="imgs/und.jpg" alt="بوستر اللعبة" class="game-poster">
@@ -2885,7 +2948,7 @@
                 </div>
             </div>
 
-            <div id="snow"class="game-card">
+            <div id="snow" class="game-card">
 
                 <div class="game-poster-box">
                     <img src="imgs/cel.jpg" alt="بوستر اللعبة" class="game-poster">
@@ -2911,7 +2974,7 @@
             </div>
 
 
-            <div id="god"class="game-card">
+            <div id="god" class="game-card">
 
                 <div class="game-poster-box">
                     <img src="imgs/god.jpg" alt="بوستر اللعبة" class="game-poster">
@@ -2925,7 +2988,7 @@
                     <div class="game-platforms">
                         <span class="platform-badge pc">PC</span>
                         <span class="platform-badge ps5">PS5</span>
-                       
+
                     </div>
 
 
@@ -2937,7 +3000,7 @@
             </div>
 
 
-            <div id="eleven"class="game-card">
+            <div id="eleven" class="game-card">
 
                 <div class="game-poster-box">
                     <img src="imgs/11.jpg" alt="بوستر اللعبة" class="game-poster">
@@ -2963,7 +3026,7 @@
             </div>
 
 
-            <div id="rise"class="game-card">
+            <div id="rise" class="game-card">
 
                 <div class="game-poster-box">
                     <img src="imgs/lara.jpg" alt="بوستر اللعبة" class="game-poster">
@@ -2983,6 +3046,60 @@
 
                     <div class="game-rating">
                         <span class="game-stars">⭐️⭐️⭐️⭐️⭐️</span>
+
+                    </div>
+                </div>
+            </div>
+
+
+
+            <div id="house" class="game-card">
+
+                <div class="game-poster-box">
+                    <img src="imgs/house of.jpg" alt="بوستر اللعبة" class="game-poster">
+                </div>
+
+
+                <div class="game-info-box">
+                    <h3 class="game-title">house of ashes</h3>
+
+
+                    <div class="game-platforms">
+                        <span class="platform-badge pc">PC</span>
+                        <span class="platform-badge ps5">PS5</span>
+                        <span class="platform-badge xbox">Xbox</span>
+                    </div>
+
+
+                    <div class="game-rating">
+                        <span class="game-stars">⭐️⭐️⭐️⭐️</span>
+
+                    </div>
+                </div>
+            </div>
+
+
+
+            <div id="last" class="game-card">
+
+                <div class="game-poster-box">
+                    <img src="imgs/last.jpg" alt="بوستر اللعبة" class="game-poster">
+                </div>
+
+
+                <div class="game-info-box">
+                    <h3 class="game-title">the last of us</h3>
+
+
+                    <div class="game-platforms">
+                        <span class="platform-badge pc">PC</span>
+                        <span class="platform-badge ps5">PS5</span>
+                        
+                    </div>
+
+
+                    <div class="game-rating">
+                        <span class="game-stars">⭐️⭐️⭐️⭐️</span>
 
                     </div>
                 </div>
